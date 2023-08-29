@@ -41,3 +41,29 @@ Section 4: [Optional] Review of Essential Javascript for React
 29. Working With Immutable Arrays
 30. Asynchronous Javascript: Promises
 31. Asynchronous Javascript: Async/Await
+
+
+Section 5: Working With Components, Props and JSX
+32. Section Overview
+33. Rendering the Root Component and Strict Mode
+34. Before We Start Coding: Debugging
+35. Components as Building Blocks
+36. Creating and Reusing a Component
+37. What is JSX ?
+38. Creating More Components
+39. Javascript Login in Components
+40. Separation of Concerns
+41. Styling React Applications
+42. Passing and Receiving Props
+43. Props, Immutability and One-Way Data Flow
+44. CHALLANGE #1: Profile Card (v1)
+45. The Rules of JSX
+46. Rendering Lists
+47. Conditional Rendering With &&
+48. Conditional Rendering With Ternaries
+49. Conditional Rendering With Multiple Returns
+50. Extracting JSX Into a New Component
+51. Destructuring Props
+52. React Fragments
+53. Setting Classes and Text Conditionally
+54. Section Summary
