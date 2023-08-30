@@ -154,3 +154,10 @@ Section 5: Working With Components, Props and JSX
 -https://stackoverflow.com/questions/36209432/how-to-dynamically-add-a-class-to-manual-class-names
 
 54. Section Summary
+
+55. CHALLANGE #2: Profile Card (v2)
+-u komponenti SkillList.jsx kreiramo niz const skills
+-u roditelj div elementu, nizu skills dodajemo metodu map()
+-u return izjavu dodajemo komponenti Skill
+-u komponenti Skill.jsx, funkciji Skill dodajemo parametar destrukturiranje props
+-u return izjavi u span elementima dodajemo uslove za prikazivanje ikonica

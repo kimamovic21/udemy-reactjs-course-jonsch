@@ -67,3 +67,4 @@ Section 5: Working With Components, Props and JSX
 52. React Fragments
 53. Setting Classes and Text Conditionally
 54. Section Summary
+55. CHALLENGE #2: Profile Card (v2)

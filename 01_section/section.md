@@ -6,6 +6,7 @@ Section 1: Welcome, Welcome, Welcome !
 
 2. Building Our First React App!
 -instaliramo react projekt - npx create-react-app
+-https://stackoverflow.com/questions/34885370/how-do-i-setup-react
 -u App.js fajlu kreiramo asinhronu funkciju getAdvice()
 -u funkciji getAdvice() kreiramo varijable response i data
 -u return izjavi kreiramo HTML elemente h1 i button
@@ -23,9 +24,12 @@ Section 1: Welcome, Welcome, Welcome !
 -prvi argument je callback funkcija, a drugi argument je niz
 -u callback funkciju dodajemo funkciju getAdvice()
 -kreiramo komponentu Message.jsx
+-https://stackoverflow.com/questions/38796756/react-components-what-is-the-proper-way-to-create-them
 -u App.js fajl importujemo Message.jsx
+-https://stackoverflow.com/questions/39361282/import-react-vs-react-component
 -u komponenti Message, funkciji Message dodajemo parametar props
 -komponenti Message dodajemo prop count unutar kojeg proslijedujemo vrijednost stanja varijable count
+-https://stackoverflow.com/questions/72494154/a-listener-indicated-an-asynchronous-response-by-returning-true-but-the-message
 
 3. Watch Before You Start!
 
