@@ -68,3 +68,6 @@ Section 5: Working With Components, Props and JSX
 53. Setting Classes and Text Conditionally
 54. Section Summary
 55. CHALLENGE #2: Profile Card (v2)
+
+
+Section 6: State, Events and Forms: Interactive Components
