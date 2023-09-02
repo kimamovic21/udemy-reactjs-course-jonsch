@@ -155,3 +155,37 @@ Section 6: State, Events and Forms: Interactive Components
 -stanja se mogu azurirati
 -stanja cine komponentu interaktivnijom
 -props sluze samo sa proslijedivanje podataka od roditelj komponente prema djete komponenti
+
+75. EXERCISE #1: Flashcards
+-kreiramo komponentu FlashCards.jsx
+-u komponenti FlashCards.jsx kreiramo niz const questions
+-nizu questions dodajemo metodu map()
+-kreiramo const [selectedId, setSelectedId] = useState(null)
+-u p element dodajemo ternarni uslov i provjeravamo da li je question.id === selectedId
+-u return izjavi metode map(), roditelj div elementu dodajemo klasu
+-u klasu dodajemo kod za dinamicno prikazivanje klase i provjeravamo da li je question.id === selectedId
+-kreiramo funkciju handleClick() sa parametrom id
+-div elementu dodajemo onClick dogadaj
+-u funkciju handleClick dodajemo funkciju setSelectedId sa argumentom id
+-u onClick dogadaj proslijedujemo anonimnu funkciju i unutar anonimne funkcije vrijednost handleClick() funkcije
+-u funkciji handleClick, u funkciji setSelectedId dodajemo ternarni uslov id !== selectedId ? id : null
+-https://stackoverflow.com/questions/55265604/uncaught-invariant-violation-too-many-re-renders-react-limits-the-number-of-re
+
+76. CHALLENGE #2: Date Counter (v2)
+-kopiramo pocetni kod od prethodnog izazova
+-u komponenti Counter.jsx kreiramo input type="range" element
+-input elementu dodajemo value atribut
+-u value atribut proslijedujemo vrijednost varijable step
+-input elementu dogadaj onChange
+-u dogadaj onChange proslijedujemo vrijednost anonimne funkcije
+-u anonimnu funkciju proslijedujemo vrijednost setStep funkcije
+-kreiramo novi input type='text' element
+-input elementu dodajemo atribut value i proslijedujemo vrijednost varijable count
+-input elementu dodajemo dogadaj onChange i proslijedujemo vrijednost anonimne funkcije
+-u anonimnu funkciju proslijedujemo vrijednost funkcije setCount
+-kreiramo button element za resetovanje 
+-kreiramo funkciju handleReset()
+-button elementu dodajemo dogadaj onClick
+-u dogadaj onClick proslijedujemo vrijednost handleReset() funkcije
+-u funkciju handleReset() dodajemo funkcije setCount() i setStep()
+-dodaojemo ternarni uslov count !== 0 || step !== 0 za prikazivanje button elementa

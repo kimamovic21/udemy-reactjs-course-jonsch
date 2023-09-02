@@ -4,7 +4,7 @@ const Counter = () => {
     const [count, setCount] = useState(0);
     const [step, setStep] = useState(1);
 
-    const handleDencrement = () => {
+    const handleDecrement = () => {
       setCount((prevState) => prevState - step);
     };
 
@@ -27,7 +27,7 @@ const Counter = () => {
       <div>
 
           <div>
-            <button onClick={handleDencrement}>-</button>
+            <button onClick={handleDecrement}>-</button>
             <span>Count: {count}</span>
             <button onClick={handleIncrement}>+</button>
           </div>

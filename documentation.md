@@ -71,3 +71,24 @@ Section 5: Working With Components, Props and JSX
 
 
 Section 6: State, Events and Forms: Interactive Components
+56. Section Overview
+57. Let's Build a Steps Component
+58. Handling Events the React Way
+59. What is State in React ?
+60. Creating a State Variable With useState
+61. Don't Set State Manually!
+62. The Mechanics of State
+63. Adding Another Piece of State
+64. React Developer Tools
+65. Updating State Based on Current State
+66. More Thoughts About State + State Guidelines
+67. A Vanilla Javascript Implementation
+68. Challenge #1: Date Counter (v1)
+69. Starting a New Project: The "Far Away" Travel List
+70. Building the Layout
+71. Rendering the Items List
+72. Building a Form and Handling Submissions
+73. Controlled Elements
+74. State vs Props
+75. EXERCISE #1: Flashcards
+76. CHALLENGE #2: Date Counter (v2)
