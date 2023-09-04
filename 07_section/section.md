@@ -153,3 +153,68 @@ Section 7: Thinking in React: State Management
 -div elementu sa klasom icon dodajemo onClick dogadaj
 -u onClick dogadaj proslijedujemo vrijednost funkcije handleToggle
 -div elementu sa klasom item dodajemo uslov za dinamicko prikazivanje klase
+
+90. The "children" Prop: Making a Reusable Button
+-kreiramo komponentu Steps.jsx
+-u App.js fajl importujemo komponentu Steps.jsx
+-kreiramo komponentu Button.jsx
+-u return izjavi kreramo button element
+-funkciji Button dodajemo parametar destruktuirani props
+-u komponentu Steps.jsx importujemo komponentu Button.jsx
+-u return izjavi komponenti Button dodajemo props
+-u komponenti Button, u style objekt proslijedujemo vrijednosti props
+-u komponenti Steps.jsx, u return izjavi, komponenti Button dodajemo otvarajuci i zatvarajuci tag
+-izmedu tagova dodajemo sadrzaj
+-u komponenti Button.jsx, funkciji Button dodajemo parametar children
+-u button element dodajemo {children}
+-children prop nam omogucava da posaljemo jsx u element
+
+91. More Reusability With the "children" Prop
+-kreiramo komponentu StepMessage.jsx
+-u return izjavi dodajemo prop children
+-funkciji StepMessage dodajemo parametar destruktuirani props step, children
+-u komponentu Steps.jsx importujemo komponentu StepMessage.jsx
+-u komponenti Step.jsx, u return izjavi, komponenti StepMessage dodajemo prop step i sadrzaj izmedu tagova komponente
+-https://stackoverflow.com/questions/41928567/div-cannot-appear-as-a-descendant-of-p
+-u App.js fajl importujemo komponentu StepMessage.jsx
+-u komponenti Steps, u return izjavi, komponenti StepMessage dodajemo komponentu Button
+
+92. EXERCISE #2: Accordion Component (v2)
+-u komponenti Accordion.jsx kreiramo const [curOpen, setCurOpen] = useState(null);
+-u return izjavi, komponenti AccordionItem dodajemo props curOpen i onCurOpen
+-u prop curOpen proslijedujemo vrijednost varijable curOpen
+-u prop onCurOpen proslijedujemo vrijednost funkcije setCurOpen
+-u komponenti AccordionItem.jsx, funkciji AccordionItem dodajemo parametre destruktuirane props curOpen i onCurOpen
+-kreiramo varijablu const isOpen
+-u funkciji handleToggle() dodajemo funkciju onCurOpen(number)
+-u komponenti Accordion.jsx, u return izjavi komponenti AccordionItem dodajemo otvarajuci i zatvarajuci tag
+-izmedu tagova dodajemo kod za dinamicko prikazivanje teksta
+-u komponenti AccordionItem.jsx, funkciji AccordionItem dodajemo parametar children
+-u funkciji handleToggle, u funkciju curOpen dodajemo uslov ternarni operator onCurOpen(isOpen ? null : number)
+
+93. CHALLENGE #1: Tip Calculator
+-kreiramo komponente
+-u komponentu TipCalculator.jsx importujemo komponente
+-u komponenti SelectedPercentage, funkciji SelectedPercentage dodajemo destruktuirani prop children
+-u komponenti TipCalculator.jsx kreiramo const [bill, setBill] = useState(0)
+-u return izjavi, komponenti BillInput dodajemo props bill i onSetBill
+-u komponenti BillInput, funkciji BillInput dodajemo parametar destruktuirani props bill i onSetBill
+-input elementu dodajemo atribute
+-input elementu dodajemo props value i onChange
+-u komponenti TipCalculator.jsx, komponenti Output dodajemo prop bill
+-u komponenti Output, funkciji Output dodajemo parametar destruktuirani prop bill
+-u komponenti TipCalculator.jsx kreiramo dva const [percentage, setPercentage] = useState(0)
+-komponentama SelectedPercentage dodajemo props percentage i onSelect
+-u komponenti SelectPercentage, funkciji SelectPercentage dodajemo parametar destruktuirane props percentage, onSelect
+-select elementu dodajemo prop value i dogadaj onChange
+-u onChange dogadaj proslijedujemo vrijednost anonimne funkcije sa parametrom e
+-u anonimnu funkciju proslijedujemo vrijednost funkcije onSelect
+-u komponenti TipCalcultaro.jsx kreiramo varijablu const tip
+-komponenti Output dodajemo prop tip
+-u komponenti Output, funkciji Outupu dodajemo parametar destruktuirani prop tip
+-u komponenti TipCalculator.jsx kreiramo funkciju handleReset()
+-u return izjavi, komponenti Reset dodajemo prop onReset
+-u komponenti Reset.jsx, funkciji Reset dodajemo destruktuirani prop onReset
+-u return izjavi, button elementu dodajemo onClick dogadaj
+-u onClick dogadaj proslijedujemo vrijednost funkcije onReset
+-u komponentu TipCalculator.jsx dodajemo uslov {bill > 0 && ... }

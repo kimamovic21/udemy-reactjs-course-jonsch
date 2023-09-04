@@ -92,3 +92,23 @@ Section 6: State, Events and Forms: Interactive Components
 74. State vs Props
 75. EXERCISE #1: Flashcards
 76. CHALLENGE #2: Date Counter (v2)
+
+
+Section 7: Thinking in React: State Management
+77. Section Overview
+78. What is "Thinking in React" ?
+79. Fundamentals of State Management 
+80. Thinking About State and Lifting State Up
+81. Reviewing "Lifting Up State"
+82. Deleting an Item: More Child-to-Parent Communication!
+83. Updating an Item: Complex Immutable Data Operation
+84. Derived State
+85. Calculating Statistics as Derived State
+86. Sorting Items
+87. Clearing the List
+88. Moving Components Into Separate Files
+89. EXERCISE #1: Accordion Component (v1)
+90. The "children" Prop: Making a Reusable Button
+91. More Reusability With the "children" Prop
+92. EXERCISE #2: Accordion Component (v2)
+93. CHALLENGE #1: Tip Calculator
