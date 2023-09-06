@@ -9,6 +9,7 @@ Section 1: Welcome, Welcome, Welcome !
 -https://stackoverflow.com/questions/34885370/how-do-i-setup-react
 -u App.js fajlu kreiramo asinhronu funkciju getAdvice()
 -https://stackoverflow.com/questions/30373343/reactjs-component-names-must-begin-with-capital-letters
+-https://stackoverflow.com/questions/56562245/parsing-error-identifier-react-has-already-been-declared
 -u funkciji getAdvice() kreiramo varijable response i data
 -u return izjavi kreiramo HTML elemente h1 i button
 -elementu button dodajemo onClick dogadaj

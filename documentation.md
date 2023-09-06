@@ -112,3 +112,20 @@ Section 7: Thinking in React: State Management
 91. More Reusability With the "children" Prop
 92. EXERCISE #2: Accordion Component (v2)
 93. CHALLENGE #1: Tip Calculator
+
+
+Section 8: [Optional] Practice Project: Eat-'N-Split
+94. Section Overview
+95. Project Setup
+96. Building the Static App: List of Friends
+97. Building the Static App: Forms
+98. Displaying the New Friend Form
+99. Adding a New Friend
+100. Selecting A Friend
+101. Creating Controlled Elements
+102. Splitting a Bill
+
+
+Section 9: PART 2: INTERMEDIATE REACT [2 PROJECTS]
+103. Introduction to Part 2
+104. Useful Resources for Part 2

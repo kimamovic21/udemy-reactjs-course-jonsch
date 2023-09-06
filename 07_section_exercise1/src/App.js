@@ -1,5 +1,6 @@
 import React from 'react'
 import Accordion from './Accordion';
+// import AccordionResponsive from './AccordionResponsive';
 
 const faqs = [
   {
@@ -23,6 +24,7 @@ const App = () => {
     return (
         <div>
             <Accordion faqs={faqs}/>
+            {/* <AccordionResponsive /> */}
         </div>
     );  
 };
