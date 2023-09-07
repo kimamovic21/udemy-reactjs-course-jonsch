@@ -162,3 +162,13 @@ Section 10: Thinking in React: Components, Composition and Reusability
 -u komponentu StarRating.jsx importujemo PropTypes
 -kreiramo StarRating.propTypes = { ... }
 -https://stackoverflow.com/questions/45692537/proptypes-is-not-defined
+
+121. CHALLENGE #1: Text Expander Component
+-u komponenti TextEpxander.jsx, funkciji TextExpander dodajemo parametre destruktuirane props
+-kreiramo const [isExpanded, setIsExpanded] = useState(false)
+-kreiramo varijablu const displayText
+-u button element dodajemo uslov ternarni operator {isExpanded ? ... : ... }
+-button elementu dodajemo dogadaj onClick
+-u dogadaj onClick proslijedujemo vrijednost anonimne funkcije
+-u anonimnu funkciju dodajemo funkciju setIsExpanded()
+-kreiramo objekt buttonStyle

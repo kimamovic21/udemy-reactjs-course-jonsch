@@ -129,3 +129,23 @@ Section 8: [Optional] Practice Project: Eat-'N-Split
 Section 9: PART 2: INTERMEDIATE REACT [2 PROJECTS]
 103. Introduction to Part 2
 104. Useful Resources for Part 2
+
+
+Section 10: Thinking in React: Components, Composition and Reusability
+105. Section Overview
+106. Setting Up the "usePopcorn" Project
+107. How to Split a UI Into Components
+108. Splitting Components in Practice
+109. Component Categories
+110. Prop Drilling
+111. Component Composition
+112. Fixing Prop Drilling With Composition (And Building a Layout)
+113. Using Composition to Make a Reusable Box
+114. Passing Elements as Props (Alternative to children)
+115. Building a Reusable Star Rating Component
+116. Creating the Stars
+117. Handling Hover Events
+118. Props as a Component API
+119. Improving Reusability With Props
+120. PropTypes
+121. CHALLENGE #1: Text Expander Component
