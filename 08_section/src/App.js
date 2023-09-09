@@ -78,12 +78,13 @@ const App = () => {
                 </Button>
             </div>
 
-           {selectedFriend && 
+           {selectedFriend && (
                 <FormSplitBill 
                     selectedFriend={selectedFriend}
                     onSplitBill={handleSplitBill}
+                    key={selectedFriend.id}
                 />
-            }
+            )}
 
         </div>
     );

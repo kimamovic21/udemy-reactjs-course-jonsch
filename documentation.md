@@ -149,3 +149,24 @@ Section 10: Thinking in React: Components, Composition and Reusability
 119. Improving Reusability With Props
 120. PropTypes
 121. CHALLENGE #1: Text Expander Component
+
+
+Section 11: How React Works Behind the Scenes
+122. Section Overview
+123. Project Setup and Walkthrough
+124. Components, Instances and Elements
+125. Instances and Elements in Practice
+126. How Rendering Works: Overview
+127. How Rendering Works: The Render Phase
+128. How Rendering Works: The Commit Phase
+129. How Diffing Works ?
+130. Diffing Rules in Practice
+131. The Key Prop
+132. Resetting State With the Key Prop
+133. Using the Key Prop to Fix Our Eat-'N-Split App
+134. Rules for Render Logic: Pure Components
+135. State Update Batching
+136. State Update Batching in Practice
+137. How Events Work in React
+138. Libraries vs Frameworks & The React Ecosystem
+139. Section Summary: Practical Takeaways
