@@ -138,3 +138,24 @@ Section 12: Effects and Data Fetching
 -u funkciji useEffect(), kreiramo funkciju callback()
 -u callback funkciji, dodajemo uslov if(event.code === 'Escape')
 -kreiramo anonimnu funkciju u kojoj dodajemo dogadaj removeEventListener()
+
+158. CHALLENGE #1: Currency Converter
+-u App.js fajlu kreiramo const [amount, setAmount] = useState(1)
+-kreiramo const [fromCurrency, setFromCurrency] = useState('EUR')
+-kreiramo const [toCurrency, setToCurrency] = useState('USD')
+-input elementu dodajemo atribut value
+-input elementu dodajemo dogadaj onClick
+-u onClick dogadaj proslijedujemo anonimnu funkciju sa parametrom e
+-u anonimnu funkciju proslijedujemo funkciju setAmount()
+-select elementima dodajemo atribute value i dogadaje onChange
+-kreiramo React Hook funkciju useEffect()
+-u funkciji useEffect(), u callback funkciji, kreiramo asinhronu funkciju handleConvert()
+-u asinhronu funkciju handleConvert() dodajemo metodu fetch()
+-kreiramo const [converted, setConverted] = useState('')
+-varijablu converted dodajemo u p elementu
+-u dependency niz dodajemo varijable amount, fromCurrency i toCurrency
+-kreiramo const [isLoading, setIsLoading] = useState(false)
+-u funkciju handleConvert() dodajemo funkciju setIsLoading(true)
+-na kraju funkcije handleConvert() dodajemo setIsLoading(false)
+-input elementu i select elemntima dodajemo atribut disabled
+-u funkciju handleConvert() dodajemo uslov if (fromCurrency === toCurrency)
