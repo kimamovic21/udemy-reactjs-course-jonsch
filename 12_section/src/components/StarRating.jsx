@@ -13,7 +13,7 @@ const starContainerStyle = {
 };
 
 const StarRating = ({ maxRating = 5, color = '#fcc419', size = 32, className = '', message = [], defaultRating = 0, onSetRating}) => {
-    
+
     StarRating.propTypes = {
         maxRating: PropTypes.number,
         defaultRating: PropTypes.number,

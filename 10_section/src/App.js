@@ -70,15 +70,6 @@ const App = () => {
           </Navbar>
 
           <Main>
-            {/* <Box element={<MovieList movies={movies}/>} />
-            <Box 
-              element={
-                <>
-                  <WatchedSummary watched={watched}/>
-                  <MovieList movies={movies}/>
-                </>
-              }
-            /> */}
             <Box>
               <MovieList movies={movies}/>
             </Box>

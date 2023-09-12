@@ -170,3 +170,24 @@ Section 11: How React Works Behind the Scenes
 137. How Events Work in React
 138. Libraries vs Frameworks & The React Ecosystem
 139. Section Summary: Practical Takeaways
+
+
+Section 12: Effects and Data Fetching
+140. Section Overview
+141. The Component Lifecycle
+142. How NOT to Fetch Data in React
+143. useEffect to the Rescue
+144. A First Look at Effects
+145. Using an async Function
+146. Adding a Loading State
+147. Handling Errors
+148. The useEffect Dependency Array
+149. Synchronizing Queries With Movie Data
+150. Selecting a Movie
+151. Loading Movie Details
+152. Adding a Watched Movie
+153. Adding a New Effect: Changing Page Title
+154. The useEffect Cleanup Function
+155. Cleaning Up the Title
+156. Cleaning Up Data Fetching
+157. One More Effect: Listening to a Keypress
