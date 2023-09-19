@@ -85,3 +85,11 @@ Section 13: Custom Hooks, Refs, and More State
 -funkciji useKey.js dodajemo parametre action i key
 -u callback funkciji dodajemo uslov if (e.code.toLowerCase() === key.toLowerCase())
 -u komponenti MovieDetails.jsx kreiramo funkciju useKey()
+
+173. CHALLENGE #1: useGeolocate
+-kreiramo useGeolocation.js fajl
+-u App.js fajlu kreiramo const [countClicks, setCountClicks] = useState(0);
+-kreiramo funkciju handleClick()
+-u App.js fajl importujemo funkciju useGeolocation
+-kreiramo funkciju useGeolocation()
+-rezultat iz funkcije geoLocation() pohranimo u varijable
