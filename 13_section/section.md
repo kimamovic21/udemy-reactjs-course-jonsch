@@ -2,7 +2,7 @@ The Ultimate React Course 2023: React, Redux & More
 Section 13: Custom Hooks, Refs, and More State
 
 
-159. Section Intro
+159. Section Overview
 
 160. React Hooks and Their Rules
 

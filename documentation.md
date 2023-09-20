@@ -192,3 +192,33 @@ Section 12: Effects and Data Fetching
 156. Cleaning Up Data Fetching
 157. One More Effect: Listening to a Keypress
 158. CHALLENGE #1: Currency Converter
+
+
+Section 13: Custom Hooks, Refs, and More State
+159. Section Overview
+160. React Hooks and Their Rules
+161. The Rules of Hooks in Practice
+162. More Details of useState
+163. Initializing State With a Callback (Lazy Initial State)
+164. useState Summary
+165. How NOT to Select DOM Elemets in React
+166. Introducing Another Hook: useRef
+167. Refs to Select DOM Elements
+168. Refs to Persist Data Between Renders
+169. What are Custom Hooks? When to Create One?
+170. Creating our First Custom Hook: useMovies
+171. Creating useLocalStorageState
+172. Creating useKey
+173. CHALLENGE #1: useGeolocate
+
+
+Section 14: [Optional] React Before Hooks: Class-Based React
+174. Section Overview
+175. Our First Class Component
+176. Working With Event Handlers
+177. Class Components vs. Function Components
+179. Fetching Weather Data
+180. Displaying the Weather
+181. Removing Boilerplate Code With Class Fields
+182. Child to Parent Communication
+183. Lifecycle Methods
