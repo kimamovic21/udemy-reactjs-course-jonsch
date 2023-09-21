@@ -222,3 +222,27 @@ Section 14: [Optional] React Before Hooks: Class-Based React
 181. Removing Boilerplate Code With Class Fields
 182. Child to Parent Communication
 183. Lifecycle Methods
+
+
+Section 15: Part 3: Advanced React + Redux [4 Projects]
+184. Introduction to Part 3
+185. Useful Resources for Part 3
+
+
+Section 16: The Advanced useReducer Hook
+186. Section Overview
+187. Yet Another Hook: useReducer
+188. Managing Related Pieces of State
+189. Managing State With useReducer
+190. The "React Quiz" App
+191. Loading Questions from a Fake API
+192. Handling Loading, Error and Ready Status
+193. Starting a New Quiz
+194. Displaying Questions
+195. Handling New Answers
+196. Moving to the Next Question
+197. Displaying Progress
+198. Finishing a Quiz
+199. Restarting a Quiz
+200. Setting Up a Timer With useEffect
+201. Section Summary: useState vs useReducer
