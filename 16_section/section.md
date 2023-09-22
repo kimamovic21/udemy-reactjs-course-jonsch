@@ -157,3 +157,16 @@ Section 16: The Advanced useReducer Hook
 -u komponenti Timer.jxs kreiramo varijable const minutes i const seconds
 
 201. Section Summary: useState vs useReducer
+
+202. CHALLENGE #1: Creating a Bank Account With useReducer
+-kreiramo objekt const initialState
+-kreiramo const [state, dispatch] = useReducer(reducer, initialState)
+-kreiramo const {balance, loan, isActive} = state
+-kreiramo funkciju reducer() sa dva parametra state i action
+-u funkciji reducer() kreiramo uslov switch(action.type)
+-u uslovu switch kreiramo vise slucajeva case
+-button elementima u atribut disabled proslijedujemo varijablu isActive
+-button elementima dodajemo dogadaje onClick
+-u dogadaje onClick proslijedujemo vrijednost funkcija dispatch
+-u funkciju reducer() dodajemo uslov if (!state.isActive && action.type !== 'openAccount')
+-u case 'requestLoan' dodajemo uslov if(state.loan > 0)
