@@ -247,3 +247,23 @@ Section 16: The Advanced useReducer Hook
 200. Setting Up a Timer With useEffect
 201. Section Summary: useState vs useReducer
 202. CHALLENGE #1: Creating a Bank Account With useReducer
+
+
+Section 17: React Router: Building Single-Page Applications (SPA)
+203. Section Overview
+204. Creating Our First App With Vite: "WorldWise"
+205. Routing and Single-Page Applications (SPAs)
+206. Implementing Main Pages and Routes
+207. Linking Between Routes With <Link /> and <NavLink />
+208. Styling Options For React Applications
+209. Using CSS Modules
+210. Building the Pages
+211. Building the App Layout
+212. Nested Routes and Index Route
+213. Implementing the Cities List
+214. Implementing the Country List
+215. Storing State in the URL
+216. Dynamic Routes With URL Parameters
+217. Reading and Setting a Query String
+218. Programmatic Navigation with useNavigate
+219. Programmatic Navigation with <Navigate/>
