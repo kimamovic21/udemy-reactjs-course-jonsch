@@ -267,3 +267,28 @@ Section 17: React Router: Building Single-Page Applications (SPA)
 217. Reading and Setting a Query String
 218. Programmatic Navigation with useNavigate
 219. Programmatic Navigation with <Navigate/>
+
+
+Section 18: Advanced State Management: The Context API
+220. Section Overview
+221. CHALLENGE #1: Understand "The Atomic Blog" App
+222. What is Context API ?
+223. Creating and Providing a Context
+224. Consuming the Context
+225. Advanced Pattern: A Custom Provider and Hook
+226. Thinking in React: Advanced State Management
+227. Back to "WorldWise": Creating a CitiesContext
+228. Consuming the CitiesContext
+229. Finishing the City View
+230. Including a Map With the Leaflet Library
+231. Displaying City Markers on Map
+232. Interacting With the Map
+233. Setting Map Position With Geolocation
+234. Fetching City Data in the Form
+235. Creating a New City
+236. Deleting a City
+237. Advanced State Management System: Context + useReducer
+238. Adding Fake Authentication: Setting Up Context
+239. Adding Fake Authentication: Implementing "Login"
+240. Adding Fake Authentication: Protecting a Route
+241. CHALLENGE #2: Refactoring "React Quiz" to Context API

@@ -1,8 +1,9 @@
 The Ultimate React Course 2023: React, Redux & More
 Section 18: Advanced State Management: The Context API
 
+220. Section Overview
 
-221. Section Overview
+221. CHALLENGE #1: Understand "The Atomic Blog" App
 
 222. What is Context API ?
 -sistem za proslijedivanje podataka kroz aplikacju bez manuelnog proslijedivanje props kroz drvo
@@ -272,3 +273,36 @@ Section 18: Advanced State Management: The Context API
 -u return izjavi dodajemo uslov ternarni operator isAuthenticated ? children : null
 -u komponentu App.jsx importujemo komponentu ProtectedRoute.jsx
 -u Route sa path app dodajemo komponentu ProtectedRoute
+
+241. CHALLENGE #2: Refactoring "React Quiz" to Context API
+-u src folderu kreiramo folder contexts
+-u folderu contexts kreiramo komponentu QuizContext.jsx
+-kreiramo varijablu QuizContext
+-u index.js fajl importujemo komponentu QuizProvider
+-kreiramo variajablu SECONDS_PER_QUESTION
+-kreiramo objekt const initialState
+-kreiramo funkciju reducer sa dva parametra stata i action
+-kreiramo uslov switch action.type
+-u uslov switch dodajemo slucajeve case
+-kreiramo funkciju QuizProvider sa parametrom children
+-kreiramo const [state, dispatch] = useReducer(reducer, initialState)
+-kreiramo varijable const { questions, status, index, answer, points, highscore, secondsRemaining } = state
+-kreiramo varijablu const numQuestions 
+-kreiramo varijablu const maxPossiblePoints 
+-kreiramo funkciju useEffect()
+-u funkciju useEffect() dodajemo funkciju fetch() i metode then()
+-u return izjavu dodajemo komponentu QuizContext.Provider
+-komponenti QuizContext.Provider dodajemo prop value
+-u komponentu QuizContext.Provider dodajemo children
+-kreiramo funkciju useQuiz()
+-u funkciji useQuiz() kreiramo varijablu const context
+-dodajemo uslov if (context === undefined)
+-eksportujemo funkcije QuizProvider i useQuiz
+-u komponenti App.jsx kreiramo const { status } = useQuiz()
+-u komponenti FinishScreen.jsx kreiramo varijable const { points, maxPossiblePoints, highscore, dispatch } = useQuiz()
+-u komponenti NextButton.jsx kreiramo varijable const { dispatch, answer, index, numQuestions } = useQuiz()
+-u komponenti Options.jsx kreiramo varijable const { dispatch, answer } = useQuiz()
+-u komponenti Progress.jsx kreiramo varijable const { index, numQuestions, points, maxPossiblePoints, answer } = useQuiz()
+-u komponenti Question.jsx kreiramo varijable const { questions, index } = useQuiz()ž
+-u komponenti StartScreen.jsx kreiramo varijable const { numQuestions, dispatch } = useQuiz()
+-u komponenti Timer.jsx kreiramo varijable const { dispatch, secondsRemaining } = useQuiz()
