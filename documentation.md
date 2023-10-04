@@ -292,3 +292,24 @@ Section 18: Advanced State Management: The Context API
 239. Adding Fake Authentication: Implementing "Login"
 240. Adding Fake Authentication: Protecting a Route
 241. CHALLENGE #2: Refactoring "React Quiz" to Context API
+
+
+Section 19: Performance Optimization and Advanced useEffect
+242. Section Overview
+243. Performance Optimization and Wasted Renders
+244. The Profiler Developer Tool
+245. A Surprising Optimization Trick With children
+246. Understanding memo
+247. memo in Practice
+248. Understanding useMemo and useCallback
+249. useMemo in Practice
+250. useCallback in Practice
+251. Optimizing Context Re-Renders
+252. Back To "WorldWise" App
+253. Optimizing Bundle Size With Code Splitting
+254. Don't Optimize Prematurely!
+255. useEffect Rules and Best Practices
+256. CHALLENGE #1: Fix Performance Issues in "Workout Timer"
+257. Setting State Based on Other State Updates
+258. Using Helper Functions in Effects
+259. Closures in Effects
