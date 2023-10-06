@@ -313,3 +313,25 @@ Section 19: Performance Optimization and Advanced useEffect
 257. Setting State Based on Other State Updates
 258. Using Helper Functions in Effects
 259. Closures in Effects
+
+
+Section 20: Redux and Modern Redux Toolkit(With Thunks)
+260. Section Overview
+261. Introduction to Redux
+262. Creating a Reducer: Bank Account
+263. Creating a Redux Store
+264. Working With Action Creators
+265. Adding More State: Customer
+266. Professional Redux File Structure: State Slices
+267. Back to React! Connecting our Redux App With React
+268. Dispatching Actions from Our React App
+269. The Legay Way of Connecting Components to Redux
+270. Redux Middleware and Thunks
+271. Making an API Call With Redux Thunks
+272. The Redux DevTools
+273. What is Redux Toolkit(RTK) ?
+274. Creating the Store With RTK
+275. Creating the Account Slice
+276. Back To Thunks
+277. Creating the Customer Slice
+278. Redux vs. Context Api
