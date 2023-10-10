@@ -335,3 +335,23 @@ Section 20: Redux and Modern Redux Toolkit(With Thunks)
 276. Back To Thunks
 277. Creating the Customer Slice
 278. Redux vs. Context Api
+
+
+Section 21: Part 4: Professional React Development [2 Projects]
+279. Introduction to Part 4
+280. Useful Resources for Part 4
+
+
+Section 22: React Router With Data Loading (v6.4+)
+281. Section Overview
+282. Setting Up a New Project: "Fast React Pizza Co."
+283. Application Planning
+284. Setting Up a Professional File Structure
+285. A New Way of Implementing Routes
+286. Building the App Layout
+287. Fetching Data With React Router "Loaders": Pizza Menu
+288. Displaying a Loading Indicator
+289. Handling Errors With Error Elements
+290. Fetching Orders
+291. Writing Data With React Router "Actions"
+292. Error Handling in Form Actions
