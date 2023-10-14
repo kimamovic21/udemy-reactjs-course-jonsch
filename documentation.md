@@ -355,3 +355,25 @@ Section 22: React Router With Data Loading (v6.4+)
 290. Fetching Orders
 291. Writing Data With React Router "Actions"
 292. Error Handling in Form Actions
+
+
+Section 23: [Optional] Tailwind CSS Crash Course: Styling the App
+293. Section Overview
+294. What is Tailwind CSS ?
+295. Setting Up Tailwind CSS
+296. Working With Color
+297. Styling Text
+298. The Box Model: Spacing, Borders and Display
+299. Responsive Design
+300. Using Flexbox
+301. Using CSS Grid
+302. Styling Buttons: Element States and Transitions
+303. Styling Form Elements
+304. Reusing Styles With @apply
+305. Reusing Styles With React Components
+306. Absolute Positioning, z-index and More
+307. Configuring Tailwind: Custom Font Family
+308. Styling the Menu
+309. Styling the Cart
+310. Styling the Order Form
+311. Styling the Order Overview
