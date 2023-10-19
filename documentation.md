@@ -394,3 +394,17 @@ Section 24: Adding Redux and Advanced React Router
 323. Integrating Geolocation
 324. Fetching Data Without Navigation: useFetcher
 325. Updating Data Without Navigation
+
+
+Section 25: Setting Up Our Biggest Project + Styled Components
+326. Section Overview
+327. Application Planning
+328. Please Download Startet Files Again
+329. Setting Up the Project: "The Wild Oasis"
+330. Introduction to Styled Components
+331. Global Styles With Styled Components
+332. Styled Component Props and the "css" Function
+333. Building More Reusable Styled Components
+334. Setting Up Pages and Routes
+335. Building the App Layout
+336. Building the Sidebar and Main Navigation
