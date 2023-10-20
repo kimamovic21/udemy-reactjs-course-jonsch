@@ -408,3 +408,15 @@ Section 25: Setting Up Our Biggest Project + Styled Components
 334. Setting Up Pages and Routes
 335. Building the App Layout
 336. Building the Sidebar and Main Navigation
+
+
+Section 26: Supabase Crash Course: Building a Back-End!
+337. Section Overview
+338. What is Supabase ?
+339. Creating a New Database
+340. Modeling Application State
+341. Creating Tables
+342. Relationships Between Tables
+343. Adding Security Policies (RLS)
+344. Connecting Supabase With Our React App
+345. Setting Up Storage Buckets
