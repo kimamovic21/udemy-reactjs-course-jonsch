@@ -48,7 +48,7 @@ const CabinTable = () => {
         <div></div>
       </TableHeader>
       {cabins.map((cabin) => {
-        console.log(cabin);
+        // console.log(cabin);
         return (
           <CabinRow 
             key={cabin.id}
