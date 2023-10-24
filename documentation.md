@@ -420,3 +420,21 @@ Section 26: Supabase Crash Course: Building a Back-End!
 343. Adding Security Policies (RLS)
 344. Connecting Supabase With Our React App
 345. Setting Up Storage Buckets
+
+
+Section 27: React Query: Managing Remote State
+346. Section Overview
+347. What is React Query ?
+348. Setting Up React Query
+349. Fetching Cabin Data
+350. Mutations: Deleting a Cabin
+351. Displaying Toasts (Notifications)
+352. Introducing Another Library: React Hook Form
+353. Creating a New Cabin
+354. Handling Form Errors
+355. Uploading Images to Supabase
+356. Editing a Cabin
+357. Abstracting React Query Into Custom Hooks
+358. Duplicating Cabins
+359. Fetching Application Settings
+360. Updating Application Settings
