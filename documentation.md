@@ -438,3 +438,19 @@ Section 27: React Query: Managing Remote State
 358. Duplicating Cabins
 359. Fetching Application Settings
 360. Updating Application Settings
+
+
+Section 28: Advanced React Patterns
+361. Section Overview
+362. An Overview of Reusability in React
+363. Setting Up an Example
+364. The Render Prop Pattern
+365. A Look at Higher-Order Components (HOC)
+366. The Compound Component Pattern
+367. Building a Modal Window Using a React Portal
+368. Converting the Modal to a Compound Component
+369. Detecting a Click Outside the Modal
+370. Confirming Cabin Deletions
+371. Building a Reusable Table
+372. Applying the Render Props Pattern
+373. Building a Reusable Context Menu
