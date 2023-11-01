@@ -454,3 +454,21 @@ Section 28: Advanced React Patterns
 371. Building a Reusable Table
 372. Applying the Render Props Pattern
 373. Building a Reusable Context Menu
+
+
+Section 29: [Optional] Implementing More Features: Authentication, Dark Mode, Dashboard, etc
+374. Section Overview
+375. Client-Side Filtering: Filtering Cabins
+376. Client-Side Sorting: Sorting Cabins
+377. Building the Bookings Table
+378. Uploading Sample Data
+379. API-Side Filtering: Filtering Bookings
+380. API-Side Sorting: Sorting Bookings
+381. Building a Reusable Pagination Component
+382. API-Side Pagination: Paginatting Bookings
+383. Prefetching With React Query
+384. Building the Single Booking Page
+385. Checking In a Booking
+386. Adding Optional Breakfast
+387. Checking Out a Booking (+Fixig a Small Bug)
+388. Deleting a Booking
