@@ -299,3 +299,202 @@ Section 29: [Optional] Implementing More Features: Authentication, Dark Mode, Da
 -kreiramo varijable const { deleteBooking, isDeleting } = useDeleteBooking()
 -u funkciju  deleteBooking(bookingId) dodajemo objekt 
 -u objekt dodajemo funkciju onSettled
+
+389. Authentication: User Login With Supabase
+-u folderu features kreiramo folder authentication
+-u folderu authentication kreiramo komponentu LoginForm.jsx
+-u komponenti LoginForm.jsx kreiramo const [email, setEmail] = useState("")
+-kreiramo const [password, setPassword] = useState("")
+-kreiramo funkciju handleSubmit()
+-u komponentu Login.jsx importujemo komponentu LoginForm.jsx
+-u bazi podataka supabase kreiramo novog usera
+-u folderu services kreiramo apiAuth.js fajl
+-u apiAuth.js fajlu kreiramo asinhronu funkciju login sa parametrima email i password
+-kreiramo varijable const { data, error }
+-dodajemo uslov if (error)
+-u komponenti LoginForm.jsx, u funkciju handleSubmit dodajemo uslov ako nema emaila i sifre
+-importujemo funkciju login
+-u funkciju handleSubmit() dodajemo funkciju login({ email, password })
+-u folderu authentication kreiramo useLogin.js fajl
+-u useLogin.js fajlu kreiramo i eksportujemo funkciju useLogin()
+-u funkciji useLogin kreiramo funkciju useMutation({...})
+-rezultat funkcije useMutation() pohranimo u varijable const { mutate: login, isLoading }
+-u komponentu LoginForm.jsx importujemo funkciju useLogin()
+-kreiramo varijable const { login, isLoading } = useLogin()
+-u funkciju handleSubmit() dodajemo funkciju login
+-u komponentu Button dodajemo uslov {!isLoading ? ... : ...>}
+
+390. Authorization: Protecting Routes
+-u ui folderu kreiramo komponentu ProtectedRoute.jsx
+-u komponentu App.jsx importujemo komponentu ProtectedRoute.jsx
+-u apiAuth.js fajlu kreiramo i eksportujemo asinhronu funkciju getCurrentUser()
+-u funkciju getCurrentUser() dodajemo metodu await supabase.auth.getSession()
+-rezultat metode await supabase.auth.getSession() pohranimo u varijablu const { data: session }
+-dodajemo uslov if (!session.session) 
+-u funkciju getCurrentUser() dodajemo metodu await supabase.auth.getUser()
+-rezultat metode await supabase.auth.getUser() pohranjujemo u varijable const { data, error }
+-dodajemo uslov if (error)
+-u folderu authentication kreiramo useUser.js fajl
+-u useUser.js fajlu kreiramo i eksportujemo funkciju useUser()
+-importujemo React Hook useQuery
+-importujemo funkciju getCurrentUser()
+-kreiramo funkciju useQuery({ ... })
+-u funkciju useQuery() dodajemo queryKey i queryFn
+-u queryFn dodajemo funkciju getCurrentUser
+-u komponentu ProtectedRoute.jsx importujemo funkciju useUser()
+-kreiramo varijable const { user, isLoading, isAuthenticated } = useUser()
+-importujemo komponentu Spinner.jsx
+-importujemo biblioteku styled
+-kreiramo stiliziranu komponentu const FullPage
+-dodajemo uslov if (isLoading)
+-importujemo React Hook useNavigate()
+-kreiramo varijablu const navigate
+-kreiramo funkciju useEffect()
+-u funkciji useEffect() dodajemo uslov if(!isAuthenticated && !isLoading)
+-dodajemo uslov if(isAuthenticated)
+-u useLogin.js fajl importujemo React Hook useQueryClient
+-kreiramo varijablu const queryClient
+-u funkciju onSuccess dodajemo metodu queryClient.setQueriesData(...)
+-u komponentu LoginForm.jsx, u funkciju login dodajemo funkciju onSettled
+
+391. User Logout
+-u folderu authentication kreiramo komponentu Logout.jsx
+-u komponentu Logout.jsx importujemo komponentu ButtonIcon.jsx
+-u komponentu Header.jsx importujemo komponentu Logout.jsx
+-u apiAuth.js fajlu kreiramo i eksportujemo asinhronu funkciju logout()
+-u funkciju logout() dodajemo metodu await supabase.auth.signOut()
+-kreiramo varijablu const { error }
+-u folderu authentication kreiramo useLogout.js fajl
+-u useLogout.js fajlu kreiramo i eksportujemo funkciju useLogout
+-importujemo React Hook useMutation
+-u funkciji useLogout kreiramo funkciju useMutation({ ... })
+-vrijednost funkcije useMutation() pohranimo u varijable const { mutate: logout, isLoading }
+-importujemo funkciju logout 
+-importujemo React Hook useNavigate
+-kreiramo varijablu const navigate
+-u funkciju useMutation dodajemo funkcije mutationFn i onSuccess
+-importujemo React Hook useQueryClient()
+-kreiramo varijablu const queryClient
+-u funkciju onSuccess dodajemo metodu queryClient.removeQueries()
+-u komponentu Logout.jsx importujemo funkciju useLogout
+-kreiramo varijable const { logout, isLoading } = useLogout()
+-u return izjavi komponentu ButtonIcon dodajemo prop disabled i prop onClick
+-importujemo komponentu SpinnerMini
+-u komponentu ButtonIcon dodajemo uslov  {!isLoading ? ... : ...}
+
+392. Fixing an Important Bug
+-u useLogin.js fajlu, u funkciji onSuccess dodajemo queryClient.setQueryData(['user'], user.user)
+
+393. Building the Sign Up Form
+-u folderu authentication kreiramo komponentu SignupForm.jsx
+-u komponentu Users.jsx importujemo komponentu SignupForm.jsx
+-u komponentu SignupForm importujemo React Hook useForm()
+-kreiramo varijable const { register, formState }
+-kreiramo varijablu const { errors } = formState
+-u return izjavi komponentama Input dodajemo prop {...register}
+-u komponenti Input za email validaciju dodajemo objekt pattern
+-u const { register, formState } dodajemo funkciju getValues
+-u komponenti Input, dodajemo prop validate
+-u const { register, formState, getValues} dodajemo funkciju handleSubmit
+-kreiramo funkciju onSubmit()
+-komponenti Form dodajemo prop onSubmit
+-u prop onSubmit dodajemo funkciju handleSubmit(onSubmit)
+-u komponente FormRow dodajemo prop error
+
+394. User Sign Up
+-u apiAuth.js fajlu kreiramo i eksportujemo asinhronu funkciju signup()
+-u funkciju signup() dodajemo metodu await supabase.auth.signUp
+-kreiramo varijable const {data, error}
+-u funkciju signup() dodajemo uslov if (error)
+-u folderu authentication kreiramo useSignup.js fajl
+-u useSignup.js fajlu kreiramo i eksportujemo funkciju useSignup()
+-importujemo React useMutation()
+-kreiramo funkciju useMutation({ ... })
+-u funkciju useMutation() dodajemo mutationFn: signupApi
+-kreiramo varijable const { mutate: signup, isLoading }
+-u funkciju useMutation() dodajemo funkciju onSuccess
+-u komponentu SignupForm.jsx importujemo funkciju useSignup
+-kreiramo const { signup, isLoading } = useSignup()
+-funkciji onSubmit() dodajemo parametre ({ ... })
+-u funkciju onSubmit() dodajemo funkciju signup()
+-u funkciju signup() dodajemo {...} i onSettled: reset
+-u supabase bazi podataka, u opciji authentication, promjenimo URL Configuration
+-dodajemo redirect URL
+-otvorimo web stranicu https://temp-mail.org/
+-kopiramo random email
+-u vite React JS aplikaciji, u stranicu users kopiramo taj email
+-kreiramo novog usera sa tim email-om
+-otvorimo web stranicu https://temp-mail.org/ i kliknemo confirm your signup
+-u komponenti SignupForm.jsx, Input i Button komponentama dodajemo prop disabled={isLoading}
+
+395. Authorization on Supabase: Protecting Database (RLS) - Row Level Security
+-u supabse bazi podataka, u opciji authentication promjenimo policies
+-odaberemo opciju target roles authenticated
+-ako pokusamo inportovani komponentu CabinTable.jsx u komponentu Login.jsx, necemo moci vidjeti kabine ako se nismo prethodno ulogovali
+
+396. Building the App Header
+-u folderu ui kreiramo komponentu HeaderMenu.jsx
+-importujemo komponentu Logout.jsx
+-importujemo komponentu ButtonIcon.jsx
+-importujemo React Hook useNavigate
+-kreiramo varijablu const navigate
+-komponentu ButtonIcon dodajemo prop onClick
+-u prop onClick dodajemo funkciju navigate('/account')
+-u komponentu Header.jsx importujemo komponentu HeaderMenu.jsx
+-u folderu authentication kreiramo komponentu UserAvatar.jsx
+-u komponentu Header.jsx importujemo komponentu UserAvatar.jsx
+-u komponenti UserAvatar.jsx kreiramo stilizirane komponente
+-importujemo funkciju useUser()
+-kreiramo varijablu const { user }
+-kreiramo varijable const { fullName, avatar }
+
+397. Updating User Data and Password
+-u folderu authentication kreiramo komponente UpdateUserDataForm.jsx i UpdatePasswordForm.jsx
+-u komponentu UpdateUserDataForm.jsx importujemo funkciju useUser()
+-kreiramo varijablu const { user: { ... }}
+-kreiramo const [fullName, setFullName] = useState(currentFullName)
+-kreiramo const [avatar, setAvatar] = useState(null)
+-kreiramo funkciju handleSubmit()
+-u return izjavi komponentama Input i komponenti FileInput dodajemo prop onChange
+-u komponentu Account.jsx importujemo komponentu UpdateUserDataForm.jsx
+-u apiAuth.js fajlu kreiramo i eksportujemo asinhronu funkciju updateCurrentUser()
+-funkciji updateCurrentUser dodajemo parametre { password, fullName, avatar}
+-u funkciju updateCurrentUser() dodajemo metodu await supabase.auth.updateUser({ })
+-kreiramo varijable const { data, error }
+-kreiramo varijablu let updateData
+-dodajemo uslove if (password) i if (fullName)
+-dodajemo updateUser(updateData)
+-dodajemo uslov if (!avatar)
+-kreiramo varijablu const fileName
+-dodajemo metodu await supabase.storage.from('avatars').upload(fileName, avatar)
+-u supabase bazi podataka odaberemo opciju storage
+-odaberemo opciju policies -> for full customization
+-dozvolimo sve operacije - select, insert, update, delete
+-u opciji target roles odaberemo authenticated
+-kreiramo varijablu const { error: storageError }
+-dodajemo uslov if (storageError) 
+-dodajemo metodu await supabase.auth.updateUser({ ... })
+-kreiramo varijable const { data: updatedUser, error: updatedUserError }
+-u supabase bazi podataka u storage bucket avatar dodamo sliku avatar
+-dodajemo uslov if (updatedUserError)
+-u folderu authentication kreiramo useUpdateUser.js fajl
+-u useUpdateUser.js fajlu kreiramo i eksportujemo funkciju useUpdateUser()
+-u komponentu UpdateUserDataForm.jsx importujemo funkciju useUpdateUser()
+-kreiramo const { updateUser, isUpdating } = useUpdateUser()
+-u funkciju handleSubmit() dodajemo uslov if (!fullName)
+-u funkciju handleSubmit() dodajemo funkciju updateUser()
+-u return izjavu komponentama Input dodajemo prop disabled={isUpdating}
+-u funkciju handleSubmit(), u funkciju updateUser({...}) dodajemo funkciju onSuccess()
+-kreiramo funkciju handleCancel()
+-u komponentu UpdatePasswordForm.jsx importujemo React Hook useForm
+-kreiramo varijable const { register, handleSubmit, formState, getValues, reset }
+-kreiramo varijablu const { errors } = formState
+-importujemo funkciju useUpdateUser()
+-kreiramo varijable const { updateUser, isUpdating } = useUpdateUser()
+-kreiramo funkciju onSubmit() sa parametrom { password }
+-u funkciju onSubmit() dodajemo funkciju updateUser()
+-u return izjavi komponentama FormRow dodajemo prop label i error
+-komponentama Input dodajemo prop id, type, autoComplete, disabled i {...register()}
+-komponenti Button Cancel dodajemo prop onClick={reset}
+-komponenti Button Update password dodajemo prop disabled={isUpdating}
+-u komponentu Account.jsx importujemo komponentu UpdatePasswordForm.jsx

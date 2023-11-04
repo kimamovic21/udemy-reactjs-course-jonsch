@@ -472,3 +472,12 @@ Section 29: [Optional] Implementing More Features: Authentication, Dark Mode, Da
 386. Adding Optional Breakfast
 387. Checking Out a Booking (+Fixig a Small Bug)
 388. Deleting a Booking
+389. Authentication: User Login With Supabase
+390. Authorization: Protecting Routes
+391. User Logout
+392. Fixing an Important Bug
+393. Building the Sign Up Form
+394. User Sign Up
+395. Authorization on Supabase: Protecting Database (RLS) - Row Level Security
+396. Building the App Header
+397. Updating User Data and Password
