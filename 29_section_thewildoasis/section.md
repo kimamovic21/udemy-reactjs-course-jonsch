@@ -498,3 +498,185 @@ Section 29: [Optional] Implementing More Features: Authentication, Dark Mode, Da
 -komponenti Button Cancel dodajemo prop onClick={reset}
 -komponenti Button Update password dodajemo prop disabled={isUpdating}
 -u komponentu Account.jsx importujemo komponentu UpdatePasswordForm.jsx
+
+398. Implementing Dark Mode With CSS Variables
+-u fajlu GlobalStyles.css kreiramo klase light-mode i dark-mode
+-u ui folderu kreiramo komponentu DarkModeToggle.jsx
+-u komponentu DarkModeToggle.jsx importujemo komponentu ButtonIcon.jsx
+-u komponentu HeaderMenu.jsx importujemo komponentu DarkModeToggle.jsx
+-u folderu src kreiramo folder context
+-u folderu context kreiramo komponentu DarkModeContext.jsx
+-u komponenti DarkModeContext kreiramo varijablu const DarkModeContext
+-kreiramo funkciju DarkModeProvider sa parametrom prop { children }
+-u funkciji DarkModeProvider() kreiramo varijable const [isDarkMode, setIsDarkMode]
+-kreiramo funkciju toggleDarkMode()
+-u return izjavi dodajemo komponentu DarkModeContext.Provider
+-komponenti DarkModeContext.Provider dodajemo prop value
+-kreiramo funkciju useDarkMode()
+-kreiramo varijablu const context 
+-dodajemo uslov if (context === undefined) 
+-eksportujemo DarkModeProvider, useDarkMode
+-u komponenti DarkModeToggle.jsx kreiramo const { isDarkMode, toggleDarkMode } = useDarkMode()
+-kreiramo useLocalStorageState.js fajl
+-kreiramo i eksportujemo funkciju useLocalStorageState() sa parametrim initialState, key
+-kreiramo varijable const [value, setValue]
+-kreiramo varijablu const storedValue
+-kreiramo funkciju useEffect()
+-u funkciju useEffect() dodajemo metodu localStorage.setItem()
+-u komponentu App.jsx importujemo komponentu DarkModeProvider
+-u komponenti DarkModeToggle.jsx komponenti u return izjavi komponenti ButtonIcon dodajemo prop onClick
+-dodajemo uslov  {isDarkMode ? ... : ...}
+-u komponentu Logo.jsx importujemo funkciju useDarkMode
+-kreiramo varijablu const { isDarkMode }
+-kreiramo varijablu const imgSource
+-u return izjavi komponenti Img dodajemo src={imgSource}
+-u komponenti DarkModeContext.js kreiramo funkciju useEffect()
+-u funkciju useEffect() dodajemo uslov if (isDarkMode)
+
+399. Building the Dashboard Layout
+-kreiramo folder dashboard
+-u folderu dashboard kreiramo komponentu DashboardLayout.jsx
+-u komponentu Dashboard.jsx importujemo komponentu DashboardLayout.jsx
+-u folderu dashboard kreiramo komponentu DashboardFilter.jsx
+-u komponentu DashboardFilter.jsx importujemo komponentu Filter.jsx
+-u komponentu Dashboard.jsx importujemo komponentu DashboardFilter.jsx
+
+400. Computing Recent Bookings and Stays
+-u apiBookings.js fajlu kreiramo i eksportujemo funkciju getBookingsAfterDate()
+-kreiramo i eksportujemo funkciju getStaysAfterDate()
+-u folderu dashboard kreiramo useRecentBookings.js fajl
+-u useRecentBookings.js fajlu kreiramo i eksportujemo funkciju useRecentBookings()
+-importujemo React Hook useSearchParams
+-kreiramo const [searchParams, setSearchParams] = useSearchParams()
+-kreiramo varijablu const numDays
+-importujemo funkciju subDays()
+-kreiramo varijablu const queryDate
+-importujemo React Hook useQuery()
+-kreiramo varijable const { isLoading, data: bookings, error }
+-importujemo funkciju getBookingsAfterDate
+-u funkciju useQuery({ ... }) dodajemo queryFn, queryKey
+-dodajemo return { isLoading, bookings }
+-u komponentu DashboardLayout importujemo funkciju useRecentBookings()
+-kreiramo varijable const { bookings, isLoading: isLoadingBookings } 
+-importujemo komponentu Spinner.jsx
+-dodajemo uslov if (isLoadingBookings)
+-u folderu dashboard kreiramo useRecentStays.js fajl
+-kopiramo kod iz useRecentBookings()
+-u useRecentStays.js fajlu kreiramo i eksportujemo funkciju useRecentStays()
+-kreiramo varijablu const confirmedStays
+-u komponentu DashboardLayout.jsx importujemo funkciju useRecentStays()
+-kreiramo varijable const { stays, confirmedStays, isLoading: isLoadingStays }
+-dodajemo uslov if (isLoadingBooking || isLoadingStays)
+
+401. Displaying Statistics
+-u folderu dashboard kreiramo komponentu Stats.jsx
+-u komponenti Stats.jsx, funkciji Stats dodajemo parametre destruktuirane props
+-kreiramo komponentu Stat.jsx
+-u komponenti Stat.jsx, funkciji Stat dodajemo parametre destruktuirane props
+-u komponentu DashboardLayout.jsx importujemo komponentu Stats.jsx
+-u return izjavi, komponenti Stats.jsx dodajemo prop bookings i confirmedStays
+-u komponentu Stats.jsx importujemo komponentu Stat.jsx
+-kreiramo varijablu const numBookings
+-u return izjavi, komponentama Stat dodajemo props
+-kreiramo varijablu const sales
+-kreiramo varijablu const checkins
+-kreiramo varijablu const occupation
+-u komponentu DashboardLayout.jsx importujemo funkciju useCabins()
+-kreiramo varijable const { cabins, isLoading: isLoadingCabins } 
+-dodajemo uslov if (isLoadingBooking || isLoadingStays || isLoadingCabins)
+
+402. Displaying a Line Chart With the Recharts Library
+-otvorimo web stranicu https://recharts.org/en-US/
+-u terminalu instaliramo Recharts paket
+-u terminal ukucamo komandu npm i recharts@2
+-u folderu dashboard kreiramo komponentu DashboardBox.jsx
+-u folderu dashboard kreiramo komponentu SalesChart.jsx
+-kreiramo stiliziranu komponentu const StyledSalesChart
+-kreiramo niz const fakeData
+-kreiramo varijablu const isDarkMode = true
+-kreiramo varijablu const colors
+-importujemo komponentu Heading.jsx
+-u komponentu DashboardLayout.jsx importujemo komponentu SalesChart.jsx
+-u komponentu SalesChart.jsx importujemo komponente iz Recharts paketa
+-komponentama iz Recharts paketa dodajemo props
+-importujemo funkciju useDarkMode()
+-funkciji SalesChart dodajemo parametre destruktuirane prop { bookings, numDays }
+-u komponenti DashboardLayout.jsx u return izjavi, komponenti SalesChart dodajemo prop bookings i numDays
+-u komponentu SalesChart.jsx importujemo funkciju eachDayOfInterval()
+-kreiramo funkciju eachDayOfInterval({ ... })
+-rezultat funkcije eachDayOfInterval() pohranjujemo u varijablu const allDates
+-kreiramo varijablu const data
+
+403. Displaying a Pie Chart
+-u komponenti SalesChart.jsx, u return izjavi, u komponenti Heading dodajemo funkcije format()
+-u folderu dashboard kreiramo komponentu DurationChart.jsx
+-u komponenti DurationChart.jsx kreirmao stiliziranu komponentu ChartBox
+-kreiramo niz const startDataLight i unutar niza objekte
+-kreiramo niz const startDataDark
+-kreiramo funkciju prepareData()
+-u funkciji prepareData() kreiramo funkciju incArrayValue()
+-kreiramo funkciju DurationChart() sa parametrom destruktuiranim prop confirmedStays
+-u komponentu DashboardLayout.jsx importujemo komponentu DurationChart.jsx
+-u return izjavi komponenti DurationChart dodajemo prop confirmedStays
+-u komponetu DurationChart.jsx importujemo komponentu Heading.jsx
+-importujemo komponente iz paketa Recharts
+-komponentama iz paketa Recharts dodajemo props
+-importujemo funkciju useDarkMode()
+-kreiramo varijablu const { isDarkMode } = useDarkMode()
+-kreiramo varijablu const startData 
+-kreiramo varijablu const data 
+
+404. Displaying Stays for Current Day
+-u folderu check-in-out kreiramo komponentu TodayActivity.jsx
+-u komponentu DashboardLayout.jsx importujemo komponentu TodayActivity.jsx
+-u apiBookings.js fajlu kreiramo funkciju getStaysTodayActivity()
+-u funkciji getStaysTodayActivity() kreiramo varijable { data, error }
+-u folderu check-in-out kreiramo useTodayActivity.js fajl
+-u useTodayActivity.js fajlu kreiramo funkciju useTodayActivity()
+-importujemo React Hook useQuery()
+-kreiramo varijable const { isLoading, data: activities }
+-importujemo funkciju getStaysTodayActivity()
+-u komponenti TodayActivity.jsx kreiramo varijable const const { activities, isLoading }
+-importujemo funkciju useTodayActivity()
+-importujemo komponentu Spinner.jsx
+-dodajemo uslov {!isLoading ? ... : ...}
+-u ckeck-in-out folderu kreiramo komponentu TodayItem.jsx
+-u komponentu TodayActivity.jsx importujemo komponentu TodayItem.jsx
+-u return izjavi, u komponenti TodayList dodajemo metodu activities.map()
+-u komponenti TodayItem.jsx, funkciji TodayItem() dodajemo parametar destruktuirani prop { activity }
+-importujemo komponentu Tag.jsx
+-kreiramo varijable const { id, status, guests, numNights }
+-kreiramo uslove { status === '...' }
+-importujemo komponentu Flag.jsx
+-importujemo komponentu Button.jsx
+-dodajemo uslov {status === 'unconfirmed' && (...)}
+-u return izjavi, komponenti Button dodajemo props
+-dodajemo uslov {status === 'checked-in' && (...)}
+-u komponentu CheckoutButton.jsx importujemo funkciju useCheckout()
+-kreiramo varijable const { checkout, isCheckingOut }
+-u return izjavi, komponenti Button dodajemo props 
+
+405. Error Boundaries
+-u terminalu instaliramo React Error Boundary Paket
+-u terminal ukucamo komandu npm i react-error-boundary
+-u ui folderu kreiramo komponentu ErrorFallback.jsx
+-u komponenti ErrorFallback.jsx, funkcji ErrorFallback dodajemo parametar destruktuirani prop error
+-importujemo komponentu GlobalStyles
+-kreiramo stilizirane komponente
+-u komponentu main.jsx importujemo komponentu ErrorFallback.jsx
+-importujemo komponentu ErrorBoundary
+-u return izjavi komponenti ErrorBoundary dodajemo prop FallbackComponent
+-u komponentu ErrorFallback.jsx importujemo komponentu Button.jsx
+-u komponenti main.jsx, u return izjavi, komponenti ErrorBoundary dodajemo prop onReset
+-u komponenti ErrorFallback.jsx, funkciji ErrorFallback() dodajemo parametar destruktuirani prop resetErrorBoundery
+-u return izjavi komponenti Button dodajemo prop onClick
+-u prop onClick proslijedujemo funkciju resetErrorBoundary
+
+406. Final Touches + Fixing Bugs
+-u komponenti Menus.jsx uredujemo varijablu const ref = useOutsideClick(close, false)
+-u funkciju handleClick() dodajemo e.stopPropagation()
+-u komponentu BookingDetail.jsx dodajemo uslov if (!booking)
+-importujemo komponentu Empty.jsx
+-u konzolu ukucamo komandu window.matchMedia('(prefers-color-schema: dark)').matches
+-u komponentu DarkModeContext.jsx u const [isDarkMode, setIsDarkMode] dodajemo metodu window.matchMedia()
+-u komponenti CabinRow.jsx, u return izjavi komponenti Menus.Button dodajemo prop disabled

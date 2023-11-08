@@ -11,8 +11,7 @@ export const useUpdateUser = () => {
         onSuccess: ({ user }) => {
             // console.log(user);
             toast.success('User account successfully updated!');
-            // queryClient.setQueryData('user', user);
-            queryClient.invalidateQueries({ queryKey: ['user']});
+            queryClient.setQueryData(['user'], user);
         },
 
         onError: (error) => toast.error(error.message),

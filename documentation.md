@@ -481,3 +481,23 @@ Section 29: [Optional] Implementing More Features: Authentication, Dark Mode, Da
 395. Authorization on Supabase: Protecting Database (RLS) - Row Level Security
 396. Building the App Header
 397. Updating User Data and Password
+398. Implementing Dark Mode With CSS Variables
+399. Building the Dashboard Layout
+400. Computing Recent Bookings and Stays
+401. Displaying Statistics
+402. Displaying a Line Chart With the Recharts Library
+403. Displaying a Pie Chart
+404. Displaying Stays for Current Day
+405. Error Boundaries
+406. Final Touches + Fixing Bugs
+
+
+Section 30: Deployment With Netlify and Vercel
+407. Section Overview
+408. Deploying to Netlify
+409. Setting Up a Git and GitHub Repository
+410. Deploying to Vercel
+
+
+Section 31: The End!
+411. Where to Go from Here

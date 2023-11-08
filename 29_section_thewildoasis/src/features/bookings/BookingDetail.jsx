@@ -17,6 +17,7 @@ import ButtonText from "../../ui/ButtonText";
 import Spinner from '../../ui/Spinner';
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
+import Empty from '../../ui/Empty';
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -32,11 +33,8 @@ const BookingDetail = () => {
   const moveBack = useMoveBack();
   const navigate = useNavigate();
 
-  if (isLoading) {
-    return (
-      <Spinner />
-    );
-  } 
+  if (isLoading) return <Spinner />;
+  if (!booking) return <Empty resourceName='booking' />;
 
   const { status, id:bookingId } = booking;
 
