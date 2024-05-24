@@ -499,5 +499,11 @@ Section 30: Deployment With Netlify and Vercel
 410. Deploying to Vercel
 
 
-Section 31: The End!
-411. Where to Go from Here
+Section 31: PART 5: Full-Stack React With Next.js [1 Project]
+sion to Part 5
+411. Introduction to Part 5
+412. Useful Resources for Part 5
+
+
+Section 40: The End!
+505. Where to Go from Here
