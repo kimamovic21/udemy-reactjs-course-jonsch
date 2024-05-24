@@ -1,0 +1,40 @@
+The Ultimate React Course 2023: React, Redux & More
+Section 32: Overview of Next.js With the "App" Router
+
+413. Section Overview
+
+414. Download Fresh Starrter Files + Slides!
+
+415. An Overview of Server-Side Rendering (SSR)
+
+416. Experiment: Manual SSR With React DOM + Node.js
+-kreiramo server.js fajl
+-u server.js fajl importujemo funkciju createServer iz paketa http
+-vrijednost funkcije createServer() pohranjujemo u varijablu const server
+-varijabli server dodajemo metodu listen()
+-importujemo funkciju parse iz paketa url
+-dodajemo uslov if, else if i else
+-kreiramo varijablu const pathName
+-u terminal ukucamo komandu node --watch server.js da pokrenemo server
+-importujemo i kreiramo funkciju readFileSync() iz paketa fs
+-vrijednost funkcije readFileSync() pohranjujemo u varijablu const htmlTemplate
+-u terminalu instaliramo Babel pakete
+-u terminalu instaliramo pakete react i react-dom
+-kreiramo start.js fajl
+-u start.js fajl importujemo paket Babel Register
+-u server.js fajl importujemo funkciju renderToString
+-u uslovu (pathName === '/') kreiramo varijablu const renderedHtml
+-importujemo paket React
+-kreiramo varijablu const html
+
+417. The Missing Piece: Hydration
+
+418. Implementing Hydration
+-kreiramo client.js fajl
+-u server.js fajlu kreiramo varijablu const clientJS
+-u terminal ukucamo komandu node --watch start.js
+-kopiramo komponente iz server.js fajla u client.js fajl
+-otvorimo link https://babeljs.io/docs/babel-standalone
+-kopiramo <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> u index.html fajl
+-otvorimo link https://legacy.reactjs.org/docs/cdn-links.html
+-u client.js fajlu dodajemo metodu ReactDOM.hydrateRoot()

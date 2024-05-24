@@ -505,5 +505,14 @@ sion to Part 5
 412. Useful Resources for Part 5
 
 
+Section 32: Overview of Next.js With the "App" Router
+413. Section Overview
+414. Download Fresh Starrter Files + Slides!
+415. An Overview of Server-Side Rendering (SSR)
+416. Experiment: Manual SSR With React DOM + Node.js
+417. The Missing Piece: Hydration
+418. Implementing Hydration
+
+
 Section 40: The End!
 505. Where to Go from Here
