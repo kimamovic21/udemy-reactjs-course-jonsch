@@ -512,6 +512,18 @@ Section 32: Overview of Next.js With the "App" Router
 416. Experiment: Manual SSR With React DOM + Node.js
 417. The Missing Piece: Hydration
 418. Implementing Hydration
+419. What is Next.js ?
+420. Setting Up a Next.js Project
+421. Frequent Next.js Updates + Documentation 
+422. Defining Routes and Pages
+423. Navigation Between Pages
+424. Creating a Layout
+425. What are React Server components? (RSC - Part 1)
+426. Fetching Data in a Page
+427. Adding Interactivity With Client Components
+428. Displaying a Loading Indicator
+429. How RSC Works Behind the Scenes (RSC - Part2) 
+430. RSC vs SSR: How are They Related? (RSC - Part 3)
 
 
 Section 40: The End!

@@ -1,0 +1,46 @@
+The Ultimate React Course 2023: React, Redux & More
+Section 32: Overview of Next.js With the "App" Router
+
+419. What is Next.js ?
+
+420. Setting Up a Next.js Project
+-u terminalu instaliramo Next.js projekt sa komandom npx-create-next-app@14
+
+421. Frequent Next.js Updates + Documentation 
+-https://nextjs.org/
+
+422. Defining Routes and Pages
+-u folderu app kreiramo folder cabins
+-u folderu cabins kreiramo page.js fajl
+-kreiramo foldere about i account
+-u VS Code-u otvorimo opcije settings i odaberemo opciju custom labels
+
+423. Navigation Between Pages
+-u komponentu page.js importujemo komponentu Link iz pakete next/link
+-u folderu app kreiramo folder components
+-u folderu components kreiramo komponentu Navigation.jsx
+-u komponentu page.js importujemo komponentu Navigation.jsx
+
+424. Creating a Layout
+-u komponenti layout.js, funkciji RootLayout dodajemo parametar destruktuirani prop children
+-kreiramo i eksportujemo varijablu export const metadata
+-kreiramo komponentu Logo.jsx
+-u komponentu layout.js importujemo komponentu Logo.jsx
+
+425. What are React Server components? (RSC - Part 1)
+
+426. Fetching Data in a Page
+-u folderu cabins/page.js kreiramo funkciju fetch()
+
+427. Adding Interactivity With Client Components
+-kreiramo komponentu Counter.jsx
+-funkciji Counter() dodajemo parametar destruktuirani prop users
+-u komponentu cabins/page.js importujemo komponentu Counter.jsx
+-komponenti Counter dodajemo prop users
+
+428. Displaying a Loading Indicator
+-u folderu app kreiramo komponentu loading.js
+
+429. How RSC Works Behind the Scenes (RSC - Part2) 
+
+430. RSC vs SSR: How are They Related? (RSC - Part 3)
