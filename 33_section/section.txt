@@ -1,0 +1,47 @@
+The Ultimate React Course 2023: React, Redux & More
+Section 33: Starting to Build the "Wild Oasis" Website
+
+431. Section Overview
+
+432. Project Planning: "The Wils Oasis" Customer Website
+
+433. Project Organization
+-kreiramo folder _lib, _styles i _components
+
+434. Styling With Tailwind CSS
+-u layout.js fajl importujemo globals.css fajl
+-u tailwind.config.js fajl dodajemo objekt colors 
+-u terminalu instaliramo paket za ikone sa komandom npm i @heroicons/react
+
+435. Adding Page Metadata and Favicon
+-u komponentama kreiramo i eksportujemo varijable const metadata
+
+436. Loading and Optimizing Fonts
+-u layout.js fajlu importujemo font Josefin_Sans
+-kreiramo funkciju Josefin_Sans({ ... })
+-vrijednost funkcije Josefin_Sans() pohranjujemo u varijablu const josefin
+
+437. Improving the Navigation and Root Layout
+-kreiramo komponentu Header.jsx
+-u layout.js fajl importujemo komponentu Header.jsx
+
+438. Optimizing Images With Next.js <Image /> Component
+-u komponentu Logo.jsx importujemo komponentu Image iz paketa Next Image
+
+439. Building the Home Page
+-u page.js fajl importujemo komponentu Image
+
+440. Building the About Page With Responsive Images
+-u folderu components kreiramo komponentu CabinCard.jsx
+-u komponentu cabins/page.js importujemo komponentu CabinCard.jsx
+
+441. Adding Nester Routes and Pages
+-otvorimo link https://restcountries.com/v2/all?fields=name,flag
+-u folderu account kreiramo foldere profile i reservations
+-u kreiranim folderima kreiramo komponente page.js
+-u folderu components kreiramo komponente ReservationCard.jsx, DeleteReservation.jsx i SelectCountry.jsx
+
+442. Adding a Nested Layout
+-u folderu account kreiramo layout.js fajl
+-u folderu components kreiramo komponente SideNavigation.jsx, SignOutButton i SignInButton.jsx
+-u account/layout.js fajl importujemo komponentu SideNavigation.jsx

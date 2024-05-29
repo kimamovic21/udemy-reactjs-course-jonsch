@@ -526,5 +526,20 @@ Section 32: Overview of Next.js With the "App" Router
 430. RSC vs SSR: How are They Related? (RSC - Part 3)
 
 
+Section 33: Starting to Build the "Wild Oasis" Website
+431. Section Overview
+432. Project Planning: "The Wils Oasis" Customer Website
+433. Project Organization
+434. Styling With Tailwind CSS
+435. Adding Page Metadata and Favicon
+436. Loading and Optimizing Fonts
+437. Improving the Navigation and Root Layout
+438. Optimizing Images With Next.js <Image /> Component
+439. Building the Home Page
+440. Building the About Page With Responsive Images
+441. Adding Nester Routes and Pages
+442. Adding a Nested Layout
+
+
 Section 40: The End!
 505. Where to Go from Here
