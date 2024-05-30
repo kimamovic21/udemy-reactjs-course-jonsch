@@ -1,0 +1,87 @@
+The Ultimate React Course 2023: React, Redux & More
+Section 34: Data Fetching, Caching and Rendering
+
+443. Section Overview
+
+444. Setting Up Supabase
+-otvorimo link: https://supabase.com/dashboard/projects
+-u folderu _lib kreiramo supabase.js fajl
+-u terminalu instaliramo Supabase paket sa komandom npm i @supabase/supabase-js
+-u supabase.js fajl importujemo i kreiramo funkciju createClient() iz paketa Supabase
+-vrijednost funkcije createClient() pohranjujemo u varijablu const supabase
+-eksportujemo varijablu supabase
+-kreiramo varijable .env.local i .env.local.example
+-u .env.local fajlu kreiramo varijable SUPABASE_URL I SUPABASE_KEY
+-u supabase.js fajlu kreiramo varijable const SUPABASE_URL i const SUPABASE_KEY
+-u funkciju createClient proslijedujemo varijable SUPABASE_URL i SUPABASE_KEY
+-u folderu _lib, u data-service.js fajl importujemo varijablu supabase
+
+445. Fetching and Displaying Cabin List
+-otvorimo link: https://nextjs.org/docs/messages/next-image-unconfigured-host
+-otvorimo next.config.mjs fajl i dodamo konfiguracioni objekt za slike
+-u komponentu cabins/page.js importujemo funkciju getCabins() iz data-service.js fajla
+
+446. Streaming Route Segments With loading.js File
+-kreiramo komponente Spinner.jsx i SpinnerMini.jsx
+-u loading.js fajl importujemo komponentu Spinner.jsx
+-u folderu cabins kreiramo loading.js fajl
+-u loading.js fajl importujemo komponentu Spinner.jsx
+
+447. What is React Suspense ?
+
+448. Streaming UI With Suspense: Cabin List
+-kreiramo komponentu CabinList.jsx
+-u page/cabins.js fajl importujemo komponentu CabinList.jsx
+-importujemo komponentu Suspense iz paketa React
+-importujemo komponentu Spinner.jsx
+-komponenti Suspense dodamo prop fallback
+-u prop fallback proslijedujemo komponentu Spinner
+
+449. Dynamic Route Segments: Building the Cabin Page
+-u folderu cabins kreiramo folder [cabinId]
+-u folderu [cabinId] kreiramo page.js fajl
+-u page.js fajl importujemo i kreiramo funkciju getCabin(cabinId)
+-vrijednost funkcije getCabin() pohranjujemo u varijablu const cabin
+
+450. Generating Dynamic Metadata
+-u [cabinId]/page.js fajlu kreiramo i eksportujemo funkciju generateMetadata()
+
+451. Error Handling: Setting Up Error Boundaries
+-u folderu app kreiramo error.js fajl
+-u error.js fajlu kreiramo i eksportujemo funkciju Error()
+-dodajemo 'use client'
+
+452. Error Handling: "Not Found" Errors
+-u folderu app kreiramo not-found.js fajl
+-u not-found.js fajlu kreiramo i eksportujemo funkciju NotFound()
+-u data-service.js fajl importujemo funkciju notFound() iz paketa Next Navigation
+-u funkciju getCabin() dodajemo funkciju notFound()
+-u folderu [cabinId] kreiramo not-found.js fajl
+
+453. Different Types of SSR: Static vs. Dynamic Rendering
+
+454. Analyting Rendering in Our App
+-u terminal ukucamo komandu npm run build
+
+455. Making Dynamic Pages Static With generateStaticParams
+-u [cabinId]/page.js fajlu kreiramo i eksportujemo asinhrunu funkciju generateStaticParams()
+-importujemo i kreiramo funkciju getCabins()
+-u funkciji generateStaticParams() vrijednost funkcije getCabins() pohranjujemo u varijablu const cabins
+-kreiramo varijablu const ids
+
+456. Static Site Generation (SSG)
+-u next.config.mjs fajl dodajemo opciju output: 'export'
+
+457. Partial Pre-Rendering
+
+458. How Next.js Caches Data
+
+459. Experimenting With Caching and ISR
+-u folderu cabins/page.js kreiramo i eksportujemo varijablu const revalidate
+-u komponentu CabinList.jsx importujemo funkciju  unstable_noStore kao noStore
+-u funkciji CabinList() kreiramo funkciju noStore()
+
+460. CHALLENGE #1: Fetching the Number of Cabins
+-u about/page.js fajl importujemo i kreiramo funkciju getCabins()
+-vrijednost funkcije getCabins() pohranjujemo u varijablu const cabins
+-kreiramo i eksportujemo varijablu const revalidate

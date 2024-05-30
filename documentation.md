@@ -541,5 +541,26 @@ Section 33: Starting to Build the "Wild Oasis" Website
 442. Adding a Nested Layout
 
 
+Section 34: Data Fetching, Caching and Rendering
+443. Section Overview
+444. Setting Up Supabase
+445. Fetching and Displaying Cabin List
+446. Streaming Route Segments With loading.js File
+447. What is React Suspense ?
+448. Streaming UI With Suspense: Cabin List
+449. Dynamic Route Segments: Building the Cabin Page
+450. Generating Dynamic Metadata
+451. Error Handling: Setting Up Error Boundaries
+452. Error Handling: "Not Found" Errors
+453. Different Types of SSR: Static vs. Dynamic Rendering
+454. Analyting Rendering in Our App
+455. Making Dynamic Pages Static With generateStaticParams
+456. Static Site Generation (SSG)
+457. Partial Pre-Rendering
+458. How Next.js Caches Data
+459. Experimenting With Caching and ISR
+460. CHALLENGE #1: Fetching the Number of Cabins
+
+
 Section 40: The End!
 505. Where to Go from Here
