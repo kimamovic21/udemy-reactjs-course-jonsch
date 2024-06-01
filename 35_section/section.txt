@@ -1,0 +1,89 @@
+The Ultimate React Course 2023: React, Redux & More
+Section 35: Client and Server Interactions
+
+461. Section Overview
+
+462. Blurring the Boundary Between Server and Client (RSC - Part 4)
+
+463. Client Components in Server Components
+-u folderu _components kreiramo komponentu TextExpander.jsx
+-u komponentu TextExpander.jsx dodajemo 'use client'
+-u [cabinId]/page.js fajl importujemo komponentu TextExpander.jsx
+
+464. Highlighting Current Side Navigation Link
+-u komponenti SideNavigation.jsx importujemo i kreiramo funkciju usePathname() iz paketa Next Navigation
+-vrijednost funkcije usePathname() pohranjujemo u varijablu const pathname
+-dodajemo 'use client'
+-u komponenti Link, u className dodajemo ternarni uslov pathname === link.href
+
+465. Sharing State Between Client and Server: The URL
+-u cabins/page.js fajlu funkciji Page() dodajemo parametar destruktuirani prop searchParams
+-kreiramo varijablu const filter
+-u return izjavi komponenti CabinList dodajemo prop filter
+-u prop filter proslijedujemo vrijednost varijable filter
+-u komponenti CabinList.jsx, funkciji CabinList() dodajemo parametar destruktuirani prop filter
+-kreiramo varijablu let displayedCabins
+-dodajemo cetiri if uslova za filtriranje kabina
+-u return izjavi umjesto cabins.map() dodajemo displayedCabins?.map()
+-otvorimo link http://localhost:3000/cabins?capacity=small
+-kreiramo komponentu Filter.jsx
+-u komponenti Filter.jsx kreiramo cetiri button elementa
+-kreiramo funkcije za filtriranje kabina
+-u cabins/page.js fajl importujemo komponentu Filter.jsx
+-importujemo i kreiramo funkciju useSearchParams() iz paketa Next Navigation
+-vrijednost funkcije useSearchParams() pohranjujemo u varijablu const searchParams
+-kreiramo funkciju handleFilter() sa parametrom filter
+-u funkciji handleFilter() kreiramo varijablu const params
+-varijabli params dodajemo metodu params.set()
+-importujemo i kreiramo funkciju useRouter() iz paketa Next Navigation
+-vrijednost funkcije useRouter() pohranjujemo u varijablu const router
+-u funkciju handleFilter() dodajemo metodu router.replace()
+-importujemo i kreiramo funkciju usePathname() iz paketa Next Navigation
+-vrijednost funkcije usePathname() pohranjujemo u varijablu const pathname
+-u cabins/page.js fajlu komponenti Suspense dodajemo prop key
+-u prop key proslijedujemo varijablu filter
+-u komponenti Filter.jsx kreiramo varijablu const activeFilter
+-kreiramo komponentu Button() sa cetiri parametra destruktuirana props
+
+466. Advanced: Server Components in Client Components
+-u folderu _components kreiramo komponentu UpdateProfileForm.jsx
+-u account/profile/page.js fajl importujemo komponentu UpdateProfileForm.jsx
+-u komponentu UpdateProfileForm.jsx dodajemo komponentu SelectCountry
+-u komponenti UpdateProfileForm.jsx, funkciji UpdateProfileForm() dodajemo parametar destruktuirani prop children
+
+467. Data Fetching Strategies for the Reservation Section
+-u folderu _components kreiramo komponente DateSelector.jsx i ReservationForm.jsx
+-u terminalu instaliramo paket React Day Picker sa komandom npm i react-day-picker
+-u komponentu DateSelector.jsx dodajemo 'use client'
+-u [cabinId]/page.js fajl importujemo komponentu DateSelector.jsx i ReservationForm.jsx
+-u [cabinId]/page.js fajl importujemo funkcije getSettings() i getBookedDatesByCabinId(params.cabinId)
+-vrijednost funkcija pohranjujemo u varijable const settings i const bookedDates
+-kreiramo komponentu Reservation.jsx 
+-u [cabinId]/page.js fajl importujemo komponentu Reservation.jsx
+-u [cabinId]/page.js fajl importujemo komponentu Suspense iz paketa React
+-komponenti Suspense dodajemo prop fallback
+-importujemo komponentu Spinner.jsx
+-u prop fallback proslijedujemo komponentu Spinner
+
+468. Using the Context API for State Management
+-u komponenti DateSelector.jsx kreiramo state varijablu range i funkciju setRange
+-u return izjavi komponenti DayPicker dodajemo prop onSelect
+-u prop onSelect proslijedujemo vrijednost funkcije setRange
+-dodajemo prop selected
+-u prop selected proslijedujemo varijablu range
+-u komponentu ReservationForm.jsx dodajemo 'use client'
+-u folderu _components kreiramo ReservationContext.js fajl
+-u ReservationContext.js fajl dodajemo 'use client'
+-u ReservationContext.js fajlu kreiramo Context API state
+-u layout.js fajl importujemo komponentu ReservationProvider
+-u komponentu ReservationProvider dodajemo prop children
+-u komponenti DateSelector.jsx importujemo i kreiramo funkciju useReservation()
+-iz funkcije useReservation() destruktuiramo varijable const { range, setRange }
+-u komponentu ReservationForm.jsx importujemo funkciju useReservation()
+
+469. Creating an API Endpoint With Route Handlers
+-u folderu api kreiramo folder api
+-u folderi api kreiramo folder cabins
+-u folderu cabins kreiramo folder [cabinId]
+-u folder [cabinId] kreiramo route.js fajl
+-u route.js fajlu kreiramo i eksportujemo funkciju GET()

@@ -562,5 +562,17 @@ Section 34: Data Fetching, Caching and Rendering
 460. CHALLENGE #1: Fetching the Number of Cabins
 
 
+Section 35: Client and Server Interactions
+461. Section Overview
+462. Blurring the Boundary Between Server and Client (RSC - Part 4)
+463. Client Components in Server Components
+464. Highlighting Current Side Navigation Link
+465. Sharing State Between Client and Server: The URL
+466. Advanced: Server Components in Client Components
+467. Data Fetching Strategies for the Reservation Section
+468. Using the Context API for State Management
+469. Creating an API Endpoint With Route Handlers
+
+
 Section 40: The End!
 505. Where to Go from Here
