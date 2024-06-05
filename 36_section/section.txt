@@ -1,0 +1,82 @@
+The Ultimate React Course 2023: React, Redux & More
+Section 36: Authentication With NextAuth (Auth.js)
+
+470. Section Overview
+
+471. Setting Up NextAuth
+-otvorimo link: https://next-auth.js.org/
+-otvorimo link: https://authjs.dev/
+-u folderu _lib kreiramo auth.js fajl
+-u .env.local fajlu kreiramo varijable NEXTAUTH_URL i NEXTAUTH_SECRET
+-otvorimo link https://generate-secret.vercel.app/ da generisemo kljuc
+-otvorimo link https://console.cloud.google.com/cloud-resource-manager
+-kreiramo novi projekt
+-u .env.local fajlu kreiramo varijable AUTH_GOOGLE_ID i AUTH_GOOGLE_SECRET
+-u terminalu instaliramo paket Next Auth sa komandom npm i next-auth@beta
+-u auth.js fajl importujemo funkcije NextAuth i Google
+-kreiramo varijablu objekt const authConfig
+-u objekt authConfig dodajemo niz providers
+-kreiramo funkciju NextAuth(authConfig)
+-vrijednost funkcije pohranjujemo u varijable const { auth, handlers }
+-eksportujemo varijable auth i handlers
+-u folderu api kreiramo folder auth
+-u folderu auth kreiramo folder [...nextauth]
+-u folderu [...nextauth] kreiramo route.js fajl
+-u route.js fajlu eksportujemo funkcije GET i POST
+-otvorimo link http://localhost:3000/api/auth/signin
+
+472. Getting the User Session
+-u komponentu Navigation.jsx importujemo i kreiramo asinhronu funkciju auth()
+-vrijednost funkcije auth() pohranjujemo u varijablu const session
+-u return izjavu dodajemo ternani uslov za varijablu {session ? ... : ...}
+-otvorimo link http://localhost:3000/api/auth/signout
+-u komponentu Reservation.jsx importujemo i kreiramo funkciju auth()
+-vrijednost funkcije auth() pohranjujemo u varijablu const session
+-kreiramo komponentu LoginMessage.jsx
+-u komponentu Reservation.jsx importujemo komponentu LoginMessage.jsx
+-u return izjavu dodajemo ternani uslov za varijablu {session?.user ? ... : ...}
+
+473. What is Middleware in Next.js ?
+
+474. Protecting Routes With NextAuth Middleware
+-kreiramo middleware.js fajl
+-u middleware.js fajlu kreiramo i eksportujemo funkciju middleware() sa parametrom request
+-importujemo funkciju NextResponse() iz paketa Next Server
+-kreiramo i eksportujemo varijablu objekt const config
+-importujemo i kreiramo funkciju auth()
+-vrijednost funkcije auth() pohranjujemo u varijablu const middleware i eksportujemo
+-u auth.js fajl, dodajemo objekt callbacks
+-u objekt callbacks dodajemo funkciju authorized()
+
+475. Building a Custom Sign In Page
+-u folderu app kreiramo folder login
+-u folderu login kreiramo page.js fajl
+-kreiramo komponentu SignInButton.jsx
+-u login/page.js fajl importujemo komponentu SignInButton.jsx
+-u auth.js fajl dodajemo objekt pages
+-eksportujemo funkcije signIn i signOut
+-u folderu _lib kreiramo actions.js fajl
+-u actions.js fajl dodajemo 'use server'
+-kreiramo i eksportujemo asinhronu funkciju signInAction()
+-otvorimo link http://localhost:3000/api/auth/providers
+-importujemo funkciju signIn()
+-u funkciju signInAction() dodajemo funkciju signIn()
+-u komponentu SignInButton.jsx importujemo importujemo funkciju signInAction
+-form elementu dodajemo prop action
+-u prop action proslijedujemo vrijednost funcije signInAction
+-u account/page.js fajl importujemo i kreiramo funkciju auth()
+-vrijednost funcije auth() pohranjujemo u varijablu const session
+-kreiramo varijablu const firstName
+
+476. Building a Custom Sign Out Button
+-u actions.js fajl importujemo funkciju signOut
+-kreiramo i eksportujemo funkciju signOutAction()
+-u funkciju signOutAction() dodajemo funkciju signOut()
+-kreiramo komponentu SignOutButton.jsx
+-u komponentu SignOutButton.jsx importujemo funkciju signOutAction
+-form elementu dodajemo prop action
+-u prop action proslijedujemo vrijednost funkcije signOutAction
+
+477. Creating a New Guest on First Sign In
+-u auth.js fajl dodajemo asinhronu funkciju signIn
+-dodajemo asinhronu funkciju session()

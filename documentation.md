@@ -574,5 +574,16 @@ Section 35: Client and Server Interactions
 469. Creating an API Endpoint With Route Handlers
 
 
+Section 36: Authentication With NextAuth (Auth.js)
+470. Section Overview
+471. Setting Up NextAuth
+472. Getting the User Session
+473. What is Middleware in Next.js ?
+474. Protecting Routes With NextAuth Middleware
+475. Building a Custom Sign In Page
+476. Building a Custom Sign Out Button
+477. Creating a New Guest on First Sign In
+
+
 Section 40: The End!
 505. Where to Go from Here
