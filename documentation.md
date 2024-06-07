@@ -585,5 +585,20 @@ Section 36: Authentication With NextAuth (Auth.js)
 477. Creating a New Guest on First Sign In
 
 
+Section 37: Mutations With Server Actions + Modern React Hooks
+478. Section Overview
+479. What are Server Actions ?
+480. Updating the Profile Using a Server Action
+481. Manual Cache Revalidation
+482. Displaying a Loading Indicator: The useFormStatus Hook
+483. Building the Guest's Reservations Page
+484. Deleting a Reservation
+485. Another Loading Indicator: The useTransition Hook
+486. CHALLENGE #1: Updating a Reservation
+487. Removing Reservations Immediately: The useOptimistic Hook
+488. Back to the Cabin Page: Finishing the Date Selector
+489. Creating a New Reservation
+
+
 Section 40: The End!
 505. Where to Go from Here

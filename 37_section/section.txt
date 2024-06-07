@@ -1,0 +1,125 @@
+The Ultimate React Course 2023: React, Redux & More
+Section 37: Mutations With Server Actions + Modern React Hooks
+
+478. Section Overview
+
+479. What are Server Actions ?
+
+480. Updating the Profile Using a Server Action
+u folder account/profile/page.js fajl importujemo i kreiramo funkcije auth() i getGuest()
+-kreiramo varijable const session i const guest
+-u return izjavi komponenti UpdateProfileForm dodajemo prop guest
+-u prop guest proslijedujemo vrijednost varijable guest
+-u komponenti UpdateProfileForm.jsx, funkciji UpdateProfileForm dodajemo parametar destruktuirani prop guest
+-destruktuiramo vise varijable iz varijable guest
+-u return izjavi input elementima dodajemo prop defaultValue
+-u actions.js fajlu kreiramo i eksportujemo asinhronu funkciju  updateProfile()
+-u komponentu UpdateProfileForm.jsx importujemo funkciju updateProfile()
+-u return izjavi form elementu dodajemo prop action
+-u prop action proslijedujemo vrijednost funkcije updateGuest
+-u actions.js fajl importujemo i kreiramo funkciju auth()
+-vrijednost funkcije auth() pohranjujemo u varijablu const session
+-dodajemo uslov if (!session)
+-kreiramo varijablu const nationalID
+-dodajemo uslov if (!/^[a-zA-Z0-9]{6,12}$/.test(nationalID))
+-kreiramo varijablu const updateData
+-dodajemo metodu await supabase i destruktuiramo varijable const { data, error }
+-dodajemo uslov if (error)
+
+481. Manual Cache Revalidation
+-u _lib/actions.js fajl importujemo i kreiramo funkciju revalidatePath()
+
+482. Displaying a Loading Indicator: The useFormStatus Hook
+-u komponentu UpdateProfileForm.jsx importujemo i kreiramo funkciju React Hook useFormStatus() iz paketa React Dom
+-u komponenti UpdateProfileForm.jsx kreiramo funkciju Button()
+-vrijednost funkcije useFormStatus() pohranjujemo u varijablu const { pending }
+-u funkciju Button(), u return izjavu dodajemo uslov ternarni operator {pending ? ... : ...}
+
+483. Building the Guest's Reservations Page
+-u reservations/page.js fajl importujemo i kreiramo funkcije auth() i getBookings()
+-vrijednost funkcije auth() pohranjujemo u varijablu const session
+-vrijednost funkcije getBookings() pohranjujemo u varijablu const bookings
+-u komponenti ReservationCard.jsx, u return izjavu dodajemo ternarni uslov {!isPast(startDate) ? ... : ... }
+
+484. Deleting a Reservation
+-u actions.js fajlu kreiramo i eksportujemo funkciju deleteReservation()
+-kreiramo varijablu const session
+-dodajemo uslov if (!session)
+-destruktuiramo varijablu const { error }
+-dodajemo uslov if (error)
+-u komponentu DeleteReservation.jsx dodajemo 'use client'
+-importujemo funkciju deleteReservation
+-u return izjavi button elementu dodajemo dogadaj onClick i proslijedujemo vrijednost funkcije deleteReservation
+-dodajemo funkciju revalidatePath('/account/reservations')
+-u actions.js fajl importujemo i kreiramo funkciju getBookings()
+-vrijednost funkcije getBookings() pohranjujemo u varijablu const guestBookings
+-kreiramo varijablu const guestBookingsIds
+-dodajemo uslov if (!guestBookingsIds.includes(bookingId))
+
+485. Another Loading Indicator: The useTransition Hook
+-u komponenti DeleteReservation.jsx importujemo i kreiramo funkciju useTransition()
+-iz funkcije useTransition() destruktuiramo varijable const [isPending, startTransition]
+-kreiramo funkciju handleDelete()
+-u funkciju handleDelete() dodajemo funkciju startTransition()
+-u return izjavi button elementu u dogadaj onClick proslijedujemo funkciju handleDelete
+-u return izjavu dodajemo uslov ternarni operator {!isPending ? ... : ...}
+
+486. CHALLENGE #1: Updating a Reservation
+-u folderu reservations kreiramo foldere edit, [bookingId] i page.js fajl
+-u page.js fajlu funkciji Page dodajemo parametar destruktuirani prop params
+-destruktuiramo varijablu const { bookingId }
+-importujemo i kreiramo funkciju getBooking() sa parametrom bookingId
+-vrijednost funkcije getBooking() pohranjujemo u varijablu const booking
+-iz varijable booking destruktuiramo varijable const { numGuests, observations, cabinId }
+-importujemo i kreiramo funkciju getCabin() sa parametrom cabinId
+-u actions.js fajlu kreiramo i eksportujemo asinhronu funkciju updateBooking() sa parametrom formData
+-u [bookingId]/page.js fajl importujemo funkciju updateBooking
+-u return izjavi form elementu dodajemo prop action
+-u prop action proslijedujemo vrijednost funkcije updateBooking
+-u actions.js fajlu, u funkciji updateBooking() kreiramo varijablu const updateData
+-kreiramo varijablu const bookingId
+-importujemo i kreiramo funkciju redirect()
+-dodajemo dvije funkcije revalidatePath()
+-u folderu _components kreiramo komponentu SubmitButton.jsx
+-u komponenti SubmitButton.jsx, funkciji SubmitButton() dodajemo prop pendingLabel i children
+-u komponentu UpdateProfileForm.jsx importujemo komponentu SubmitButton.jsx
+-u return izjavi komponenti SubmitButton dodajemo prop pendingLabel
+
+487. Removing Reservations Immediately: The useOptimistic Hook
+-u folderu _components kreiramo komponentu ReservationList.jsx
+-u komponentu ReservationList.jsx dodajemo 'use client'
+-importujemo i kreiramo funkciju useOptimistic()
+-vrijednost funkcije useOptimistic() pohranjujemo u varijable const [optimisticBookings, optimisticDelete]
+-u reservations/page.js fajl importujemo komponentu ReservationList.jsx
+-u komponentu ReservationList.jsx importujemo funkciju deleteReservation()
+-kreiramo asinhronu funkciju handleDelete()
+-u funkciju handleDelete() dodajemo funkciju deleteReservation()
+
+488. Back to the Cabin Page: Finishing the Date Selector
+-u komponenti DateSelector.jsx, u funkciji DateSelector() destruktuiramo varijable const { regularPrice, discout }
+-kreiramo varijable numNights i const cabinPrice
+-u return izjavi, u komponentu DayPicker dodajemo prop disabled
+-kreiramo varijablu const displayRange
+-u prop selected proslijedujemo vrijednost varijable displayRange
+
+489. Creating a New Reservation
+-u komponenti ReservationForm.jsx destruktuiramo varijable const { maxCapacity, regularPrice, discount, id }
+-kreiramo varijable const startDate i const endDate
+-importujemo i kreiramo funkciju differenceInDays()
+-vrijednost funkcije differenceInDays() pohranjujemo u varijablu const numNights
+-kreiramo varijablu const cabinPrice
+-u actions.js fajlu kreiramo i eksportujemo asinhronu funkciju createBooking sa parametrom formData
+-u komponentu ReservationForm.jsx importujemo funkciju createBooking
+-u return izjavi form elementu dodajemo prop action
+-u prop action proslijedujemo vrijednost funkcije createBooking
+-kreiramo varijablu objekt const bookingData
+-varijabli bookingData dodajemo metodu .bind()
+-vrijednost funkcije createBooking.bind() pohranjujemo u varijablu const createBookingWithData
+-u actions.js fajlu, u funkciji createBooking() kreiramo varijablu objekt const newBooking
+-destruktuiramo varijablu const { error }
+-dodajemo uslov if (error)
+-u komponenti ReservationForm.jsx, u prop action anonimnu asinhronu funkciju sa parametrom formData
+-importujemo komponentu SubmitButton.jsx
+-u return izjavu dodajemo uslov ternarni operator !(startDate && endDate) ? ... : ...
+-u folderu cabins kreiramo folder thankyou i unutar njega page.js fajl
+-u actions.js fajl, u funkciju createBooking() dodajemo funkcije revalidatePath() i redirect()
