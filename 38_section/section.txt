@@ -1,0 +1,10 @@
+The Ultimate React Course 2023: React, Redux & More
+Section 38: Deployment With Vercel
+
+490. Section Overview
+
+491. Setting Up the Github Repository
+
+492. Deploying to Vercel
+
+493. Updating Environment Variables and OAuth Credentials

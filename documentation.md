@@ -600,5 +600,12 @@ Section 37: Mutations With Server Actions + Modern React Hooks
 489. Creating a New Reservation
 
 
+Section 38: Deployment With Vercel
+490. Section Overview
+491. Setting Up the Github Repository
+492. Deploying to Vercel
+493. Updating Environment Variables and OAuth Credentials
+
+
 Section 40: The End!
 505. Where to Go from Here
