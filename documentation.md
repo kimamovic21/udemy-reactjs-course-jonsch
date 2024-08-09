@@ -607,5 +607,19 @@ Section 38: Deployment With Vercel
 493. Updating Environment Variables and OAuth Credentials
 
 
+Section 39: [OPTIONAL] Legacy Next.js: The "Pages" Router
+494. Section Overview
+495. Setting Up Another Project
+496. Routes, Pages, and Navigation
+497. Dynamic Routes
+498. Creating a Layout With a Custom _App
+499. Creating Pages
+500. Defining Page Title and Favicon
+501. Fetching Data With getStaticProps (SSG)
+502. Fetching Data With getServerSideProps (SSR)
+503. API Routes
+504. Handling Form Submissions
+
+
 Section 40: The End!
 505. Where to Go from Here

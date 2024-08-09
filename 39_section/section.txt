@@ -1,0 +1,79 @@
+The Ultimate React Course 2023: React, Redux & More
+Section 39: [OPTIONAL] Legacy Next.js: The "Pages" Router
+
+494. Section Overview
+
+495. Setting Up Another Project
+-kreiramo Next.js aplikaciju sa komandom npx create-next-app@14
+-u terminalu instaliramo pakete za Supabase i React Hero ikonice
+
+496. Routes, Pages, and Navigation
+-u folderu pages kreiramo komponente cabins.js, about.js
+-u index.js fajl importujemo i kreiramo komponent Link
+-u folderu pages kreiramo folder test i fajlvoe index.js i test.js
+
+497. Dynamic Routes
+-u folderu cabins kreiramo [cabinId].js fajl
+
+498. Creating a Layout With a Custom _App
+-u folderu cabins kreiramo _app.js fajl
+-kreiramo folder components i jsx komponente
+
+499. Creating Pages
+-u folderu cabins kreiramo contact.js fajl
+
+500. Defining Page Title and Favicon
+-u _app.js fajlu kreiramo komponentu Head
+-u ostalim komponentama takoder kreiramo komponentu Head
+
+501. Fetching Data With getStaticProps (SSG)
+-u caibns.js fajlu, kreiramo i eksportujemo funkciju getStaticProps()
+-importujemo funkciju getCabins
+-u funkciji getStaticProps() dodajemo metodu await getCabins()
+-vrijednost metode await getCabins() pohranjujemo u varijablu const cabins
+-u return izjavu dodajemo { props: { cabins }}
+-funkciji Cabins() dodajemo parametar destruktuirani prop cabins
+-u cabins.js fajl importujemo komponentu CabinList
+-komponenti CabinList dodajemo prop cabins u koji proslijedujemo varijablu cabins
+
+502. Fetching Data With getServerSideProps (SSR)
+-u [cabins]/cabin.js fajlu kreiramo i eksportujemo funkciju getServerSideProps()
+-funkciji getServerSideProps() dodajemo parametar destruktuirani prop params
+-importujemo funkciju getCabin
+-u funkciji getServerSideProps() dodajemo metodu await getCabin()
+-vrijednost metode await getCabin() pohranjujemo u varijablu const cabin
+-funkciji getCabin() dodajemo params.cabinId
+-funkciji Cabin() dodajemo parametar destruktuirani prop cabin
+-u [cabinId].js fajl importujemo komponentu CabinView
+-komponenti CabinView dodajemo prop cabin u koji proslijedujemo varijablu cabin
+
+503. API Routes
+-u folderu pages kreiramo folder api
+-u folderu api kreirani contact.js fajl
+-u contact.js fajlu kreiramo i eksportujemo funkciju handler()
+-funkciji handler dodajemo parametre req i res
+-otvorimo rutu localhost:3000/api/contact
+-kreiramo varijablu objekt const contactData
+-u bazi Supabase kreiramo tabelu contact
+-dodajemo metodu await supabase.from('contact')
+-vrijednost metode await supabase.from() pohranjujemo u varijablu const { error }
+-dodajemo uslov if (error)
+-dodajemo metodu res.status(200).json({ ... })
+-dodajemo uslov if (req.method !== 'POST')
+
+504. Handling Form Submissions
+-u contact.js fajlu, form elementu dodajemo dogadaj onSubmit
+-kreiramo asinhronu funkciju handleSubmit() sa parametrom e
+-u dogadaj onSubmit proslijedujemo funkciju handleSubmit
+-u funkciju handleSubmit() dodajemo metodu new FormData(e.target)
+-vrijednost metode new FormData() pohranjujemo u varijablu const formData
+-kreiramo varijablu const contactData
+-kreiramo funkciju fetch('/api/contact') i konfiguracioni objekt
+-prije funkcije fetch() dodajemo funkciju setIsSubmitting(true)
+-poslije funkcije fetch() dodajemo funkciju setIsSubmitting(false)
+-u jsx-u, u return izjavi dodajemo ternarni operator isSubmitting ? '...' : '...'
+-vrijednost metode await fetch() pohranjujemo u varijablu const response
+-destruktuiramo varijable const { success, message } iz metode await response.json()
+-dodajemo funkcije setMessage(message) i setSuccess(success)
+-u jsx-u, u return izjavu dodajemo ternarni uslov success === true
+-dodajemo uslov !success && message
